@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Playwright test reports
+playwright-report/
+test-results/
+reports/
+
+# Environment files
+.env
+.env.*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Coverage reports
+coverage/
