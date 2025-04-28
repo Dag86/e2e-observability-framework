@@ -21,4 +21,9 @@ export class HomePage {
   async assertTodoVisible(todoText: string) {
     await this.page.waitForSelector(HomePageSelectors.todoTitle);
   }
+  async filterTodos(filterName: 'All' | 'Active' | 'Completed') {
+    await this.page.click(`text=${filterName}`);
+    
+  }
+  
 }

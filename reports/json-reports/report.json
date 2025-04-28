@@ -81,23 +81,23 @@
   },
   "suites": [
     {
-      "title": "api\\healthcheck.spec.ts",
-      "file": "api/healthcheck.spec.ts",
+      "title": "regression\\delete-todo.spec.ts",
+      "file": "regression/delete-todo.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "@api TodoMVC App Health Check",
-          "file": "api/healthcheck.spec.ts",
-          "line": 3,
-          "column": 6,
+          "title": "@regression Delete Todo",
+          "file": "regression/delete-todo.spec.ts",
+          "line": 6,
+          "column": 15,
           "specs": [
             {
-              "title": "Home page is reachable and returns HTML",
+              "title": "User can delete a todo item",
               "ok": true,
               "tags": [
-                "api"
+                "regression"
               ],
               "tests": [
                 {
@@ -111,12 +111,34 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 201,
+                      "duration": 1835,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-04-28T03:59:23.995Z",
+                      "steps": [
+                        {
+                          "title": "Navigate to the Todo App",
+                          "duration": 876
+                        },
+                        {
+                          "title": "Create a new Todo item",
+                          "duration": 318
+                        },
+                        {
+                          "title": "Verify the Todo item was created",
+                          "duration": 32
+                        },
+                        {
+                          "title": "Hover over and delete the Todo item",
+                          "duration": 207
+                        },
+                        {
+                          "title": "Verify the Todo item no longer exists",
+                          "duration": 18
+                        }
+                      ],
+                      "startTime": "2025-04-28T17:54:53.555Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -124,16 +146,16 @@
                   "status": "expected"
                 }
               ],
-              "id": "9475a22f05a81fbbaec4-d831902b0f8ce161ad22",
-              "file": "api/healthcheck.spec.ts",
-              "line": 4,
+              "id": "c0271a9a27e4862d0fc2-a84dd51034fd6c7ed7a5",
+              "file": "regression/delete-todo.spec.ts",
+              "line": 7,
               "column": 7
             },
             {
-              "title": "Home page is reachable and returns HTML",
+              "title": "User can delete a todo item",
               "ok": true,
               "tags": [
-                "api"
+                "regression"
               ],
               "tests": [
                 {
@@ -147,12 +169,34 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 537,
+                      "duration": 3216,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-04-28T03:59:23.997Z",
+                      "steps": [
+                        {
+                          "title": "Navigate to the Todo App",
+                          "duration": 600
+                        },
+                        {
+                          "title": "Create a new Todo item",
+                          "duration": 345
+                        },
+                        {
+                          "title": "Verify the Todo item was created",
+                          "duration": 41
+                        },
+                        {
+                          "title": "Hover over and delete the Todo item",
+                          "duration": 322
+                        },
+                        {
+                          "title": "Verify the Todo item no longer exists",
+                          "duration": 81
+                        }
+                      ],
+                      "startTime": "2025-04-28T17:54:53.527Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -160,9 +204,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "9475a22f05a81fbbaec4-bebada7ee8f9ecb28fb0",
-              "file": "api/healthcheck.spec.ts",
-              "line": 4,
+              "id": "c0271a9a27e4862d0fc2-f6f9d14fe37b4e4e10bb",
+              "file": "regression/delete-todo.spec.ts",
+              "line": 7,
               "column": 7
             }
           ]
@@ -172,8 +216,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-04-28T03:59:22.579Z",
-    "duration": 1994.4819999999997,
+    "startTime": "2025-04-28T17:54:52.284Z",
+    "duration": 6501.77,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,

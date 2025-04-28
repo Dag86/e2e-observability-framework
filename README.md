@@ -19,7 +19,6 @@ This project integrates automation, reporting, observability, and CI/CD best pra
 - **CI/CD Integrated**: GitHub Actions pipeline for automated test execution.
 - **Scalable Design**: Structured for future API testing, visual testing, and dashboard integrations.
 
-
 ---
 
 ## 🚀 Tech Stack
@@ -39,20 +38,20 @@ This framework covers:
 - ✅ API health check validation
 - ✅ Dynamic reporting into GitHub Actions
 - ✅ CI/CD integration with artifact upload
-  
 
---
+---
 
 ## 🧪 Test Types
 
 | Suite | Description |
 |:---|:---|
-| Smoke | Create and complete todo items across multiple test data variants |
-| Regression | Delete todo item with hover and dynamic button interaction |
+| Smoke | Core workflows: Create and complete todos, persistence, and filtering |
+| Regression | Edge case testing: Delete active/completed todos, prevent empty input |
 | API | Health check of the Playwright TodoMVC application endpoint |
 
 ✅ Test data is fully abstracted.  
-✅ Selectors are fully centralized.
+✅ Selectors are fully centralized.  
+✅ Test actions are modularized with a custom `step()` helper for better reporting.
 
 ---
 
@@ -64,17 +63,23 @@ src/
 ├── constants/
 │   ├── selectors.ts
 │   ├── test-data.ts
+|   |-- urls.ts
 ├── pages/
 │   ├── HomePage.ts
 ├── tests/
 │   ├── smoke/
 │   │   ├── todo-flow.spec.ts
+│   │   ├── todo-persistence-and-filtering.spec.ts
 │   ├── regression/
 │   │   ├── delete-todo.spec.ts
+│   │   ├── complete-and-delete-todo.spec.ts
+│   │   ├── empty-todo-validation.spec.ts
+├── utils/
+│   ├── step-helper.ts
 reports/
 .github/
 ├── workflows/
-│   ├── run-tests.yml (optional later for CI/CD)
+│   ├── playwright.yml
 playwright.config.ts
 package.json
 README.md
@@ -127,17 +132,28 @@ npx playwright show-report
 ## 📈 Reporting
 
 - All test execution reports are generated under `/reports/`
-- JSON reports are available for observability integrations
-- HTML reports provide full test execution visibility via Playwright Reporter
+- JSON and HTML reports uploaded as CI artifacts
+- GitHub Action Summary dynamically shows test results
+- Ready for observability integrations (Grafana/Prometheus future)
 
 ---
 
-## 🧠 Future Roadmap (Optional for Expansion)
+## 🧠 Key Features
+
+- 🧩 Modular Page Object Model structure
+- 📊 Native Playwright `test.step()` integration with a custom `step()` utility helper
+- 🛠️ Dynamic summaries inside GitHub Action runs
+- 🔥 Full CRUD flow coverage across smoke and regression tests
+- 🚀 CI/CD friendly architecture
+
+---
+
+## 📈 Future Roadmap (Optional for Expansion)
 
 - Integrate Dockerized Grafana/Prometheus for real-time test observability
-- Add API Testing Layer using `playwright.request`
-- Parallelize and shard tests across CI/CD pipelines
-- Integrate flaky test detection and quarantine system
-- Build visual dashboard from test execution trends (for management visibility)
+- Expand API Testing Layer using `playwright.request`
+- Parallelize and shard tests across CI/CD runners
+- Flaky test detection and auto-quarantine system
+- Build visual dashboard based on test execution trends
 
 ---

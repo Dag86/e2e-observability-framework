@@ -6,10 +6,10 @@ A structured strategy for ensuring scalable, maintainable, and observable end-to
 
 ## 🛠️ Objective
 
-- Validate critical user workflows via E2E automation.
+- Validate critical user workflows and backend health early via E2E and API automation.
 - Detect functional regressions quickly during development and release cycles.
 - Maintain clean, modular, and scalable test architecture.
-- Enable reporting and observability for continuous integration and operational feedback loops.
+- Enable rich reporting, observability, and actionable feedback loops in CI/CD environments.
 
 ---
 
@@ -17,8 +17,9 @@ A structured strategy for ensuring scalable, maintainable, and observable end-to
 
 | Test Type | Purpose | Examples |
 |:---|:---|:---|
-| Smoke Tests | Verify that core functionality is operational. | Create todo, complete todo |
-| Regression Tests | Validate critical edge cases and negative scenarios. | Delete todo item |
+| Smoke Tests | Verify that core functionality is operational. | Create todo, complete todo, persistence on reload, active/completed filter |
+| Regression Tests | Validate critical edge cases and negative scenarios. | Delete active todo, complete and delete todo, prevent empty submission |
+| API Tests | Validate backend availability and basic endpoint health. | Health check of Playwright TodoMVC app |
 
 ✅ Focus is on critical path coverage first, then iterative expansion.
 
@@ -26,106 +27,87 @@ A structured strategy for ensuring scalable, maintainable, and observable end-to
 
 ## 📚 Test Data Strategy
 
-- Test data is centralized inside `src/constants/test-data.ts`.
+- Test data centralized in `src/constants/test-data.ts`.
 - Structured using simple reusable object patterns.
-- Data-driven tests are implemented where necessary to validate variations without duplicating code.
-
-Example:
-
-```typescript
-export const TestData = {
-  todoItem: {
-    basic: 'Wash the car',
-    second: 'Buy groceries',
-    specialChars: '!@#$%^&*()_+',
-    longText: 'A very long todo item to test UI wrapping behavior...'
-  }
-};
-```
+- Data-driven tests validate variations without duplicating code.
 
 ---
 
 ## 🎯 Selector Strategy
 
-- All UI element selectors are centralized in `src/constants/selectors.ts`.
-- Preference order for selectors:
-  1. `data-testid` attributes (preferred and stable)
+- UI selectors centralized in `src/constants/selectors.ts`.
+- Preference order:
+  1. `data-testid` (preferred)
   2. Accessibility attributes (e.g., `aria-label`)
-  3. Semantic element tags only if necessary
-- Xpath is avoided unless absolutely required.
+  3. Semantic tags only if necessary
 
-✅ This ensures that changes to UI structure impact only one location.
+✅ One location to update if UI changes.
 
 ---
 
 ## 🏗️ Page Object Model (POM)
 
-- Page Objects are used to encapsulate page-specific behaviors and actions.
-- Located inside `src/pages/`, currently managing:
+- Encapsulate page-specific behaviors in `src/pages/`.
+- Responsibilities include:
   - Navigation
   - Todo creation
   - Todo completion
+  - Todo filtering
 
-✅ Keeps test scripts clean and focused on logic, not low-level DOM details.
+✅ Tests focus only on workflow logic, not DOM manipulation.
 
 ---
 
 ## ⚙️ Test Execution Strategy
 
-- Playwright test runner (`@playwright/test`) handles all execution.
-- Tests are organized into logical suites under:
+- Organized into logical suites:
   - `src/tests/smoke/`
   - `src/tests/regression/`
-- Browser projects are defined in `playwright.config.ts`:
+  - `src/tests/api/`
+- Cross-browser projects:
   - Chromium
   - Firefox
   - WebKit
 
-✅ Allows for cross-browser validation from the start.
+✅ Scalable and platform-neutral by default.
 
 ---
 
-## 🚀 CI/CD Integration Strategy (Planned)
+## 🚀 CI/CD Integration Strategy
 
-- Ready for GitHub Actions integration under `.github/workflows/run-tests.yml`.
-- Reporting configured for:
-  - HTML reports
-  - JSON reports (future observability integrations like Prometheus/Grafana)
+- Fully integrated with GitHub Actions:
+  - `.github/workflows/playwrite.yml`
+- Reports:
+  - HTML (via Playwright)
+  - JSON (future Prometheus/Grafana ingestion)
+  - Dynamic summary update via `$GITHUB_STEP_SUMMARY`
+- Artifact uploads for every test run.
 
-✅ Ensures tests can run automatically on PRs and deployments in the future.
+✅ Test feedback embedded directly in pull requests and pipelines.
 
 ---
 
 ## 📈 Reporting Strategy
 
-- HTML report generated per test run under `/reports/playwright-reports/`.
-- JSON report generated under `/reports/json-reports/` for potential future pipeline integrations.
-- Command to open the latest report:
+- HTML report generated at `/reports/playwright-reports/`.
+- JSON report at `/reports/json-reports/`.
+- GitHub Actions Step Summary dynamically updated.
+
+Open latest report locally:
 
 ```bash
 npx playwright show-report
 ```
 
-✅ Enables both visual and programmatic result analysis.
-
 ---
 
 ## 🛠️ Maintenance Strategy
 
-- New selectors must be added to `selectors.ts`.
-- New data must be added to `test-data.ts`.
-- New pages must be added to `pages/` using the POM pattern.
-- Every test must use clean and descriptive tags (`@smoke`, `@regression`, etc.).
+- All new UI selectors go into `selectors.ts`.
+- All new data variants go into `test-data.ts`.
+- All new page behaviors modeled in POM under `pages/`.
+- All test logic uses `step()` utility helper from `utils/step-helper.ts` for consistent reporting.
+- Clean tagging system (`@smoke`, `@regression`, `@api`) enforced.
 
-✅ Keeps the framework modular, extensible, and easy to audit.
+✅ Framework remains modular, maintainable, and easy to audit.
 
----
-
-## 🧠 Future Expansion Plans
-
-- Add API testing layer using Playwright's `request` context.
-- Implement test parallelization and sharding across multiple runners.
-- Capture and visualize test execution trends with Grafana dashboards.
-- Add flakiness detection and quarantine workflows for unstable tests.
-
----
