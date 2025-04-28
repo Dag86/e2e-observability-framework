@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 2
     },
     "preserveOutput": "always",
     "reporter": [
@@ -44,7 +44,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 2
         },
         "id": "Chromium",
         "name": "Chromium",
@@ -60,26 +60,10 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 2
         },
         "id": "Firefox",
         "name": "Firefox",
-        "testDir": "C:/Users/chosh/OneDrive/Desktop/e2e-observability-framework/src/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "C:/Users/chosh/OneDrive/Desktop/e2e-observability-framework/test-results",
-        "repeatEach": 1,
-        "retries": 1,
-        "metadata": {
-          "actualWorkers": 3
-        },
-        "id": "WebKit",
-        "name": "WebKit",
         "testDir": "C:/Users/chosh/OneDrive/Desktop/e2e-observability-framework/src/tests",
         "testIgnore": [],
         "testMatch": [
@@ -97,23 +81,23 @@
   },
   "suites": [
     {
-      "title": "regression\\delete-todo.spec.ts",
-      "file": "regression/delete-todo.spec.ts",
+      "title": "api\\healthcheck.spec.ts",
+      "file": "api/healthcheck.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "@regression Delete Todo",
-          "file": "regression/delete-todo.spec.ts",
-          "line": 6,
+          "title": "@api TodoMVC App Health Check",
+          "file": "api/healthcheck.spec.ts",
+          "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "User can delete a todo item",
+              "title": "Home page is reachable and returns HTML",
               "ok": true,
               "tags": [
-                "regression"
+                "api"
               ],
               "tests": [
                 {
@@ -127,12 +111,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1530,
+                      "duration": 201,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-04-28T00:42:01.167Z",
+                      "startTime": "2025-04-28T03:59:23.995Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -140,16 +124,16 @@
                   "status": "expected"
                 }
               ],
-              "id": "c0271a9a27e4862d0fc2-a84dd51034fd6c7ed7a5",
-              "file": "regression/delete-todo.spec.ts",
-              "line": 7,
+              "id": "9475a22f05a81fbbaec4-d831902b0f8ce161ad22",
+              "file": "api/healthcheck.spec.ts",
+              "line": 4,
               "column": 7
             },
             {
-              "title": "User can delete a todo item",
+              "title": "Home page is reachable and returns HTML",
               "ok": true,
               "tags": [
-                "regression"
+                "api"
               ],
               "tests": [
                 {
@@ -163,12 +147,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3381,
+                      "duration": 537,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-04-28T00:42:01.183Z",
+                      "startTime": "2025-04-28T03:59:23.997Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -176,45 +160,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "c0271a9a27e4862d0fc2-f6f9d14fe37b4e4e10bb",
-              "file": "regression/delete-todo.spec.ts",
-              "line": 7,
-              "column": 7
-            },
-            {
-              "title": "User can delete a todo item",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "WebKit",
-                  "projectName": "WebKit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 2197,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-04-28T00:42:01.184Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "c0271a9a27e4862d0fc2-9f7b327ce4d2fec9a551",
-              "file": "regression/delete-todo.spec.ts",
-              "line": 7,
+              "id": "9475a22f05a81fbbaec4-bebada7ee8f9ecb28fb0",
+              "file": "api/healthcheck.spec.ts",
+              "line": 4,
               "column": 7
             }
           ]
@@ -224,9 +172,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-04-28T00:41:59.701Z",
-    "duration": 7256.126,
-    "expected": 3,
+    "startTime": "2025-04-28T03:59:22.579Z",
+    "duration": 1994.4819999999997,
+    "expected": 2,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

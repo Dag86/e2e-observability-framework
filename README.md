@@ -3,6 +3,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-14.x-blue.svg)
 ![Playwright](https://img.shields.io/badge/Playwright-E2E-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue)
+![API Testing](https://img.shields.io/badge/API-Testing-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![CI](https://github.com/Dag86/e2e-observability-framework/actions/workflows/playwright.yml/badge.svg)
 
@@ -30,12 +31,25 @@ This project integrates automation, reporting, observability, and CI/CD best pra
 
 ---
 
+## 🛡️ Test Coverage Overview
+
+This framework covers:
+
+- ✅ End-to-End (E2E) UI automation
+- ✅ API health check validation
+- ✅ Dynamic reporting into GitHub Actions
+- ✅ CI/CD integration with artifact upload
+  
+
+--
+
 ## 🧪 Test Types
 
 | Suite | Description |
 |:---|:---|
 | Smoke | Create and complete todo items across multiple test data variants |
 | Regression | Delete todo item with hover and dynamic button interaction |
+| API | Health check of the Playwright TodoMVC application endpoint |
 
 ✅ Test data is fully abstracted.  
 ✅ Selectors are fully centralized.
