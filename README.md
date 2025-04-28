@@ -6,9 +6,18 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![CI](https://github.com/Dag86/e2e-observability-framework/actions/workflows/playwright.yml/badge.svg)
 
+A modular and scalable End-to-End (E2E) testing platform built with **Playwright**, designed for modern software delivery pipelines.  
+This project integrates automation, reporting, observability, and CI/CD best practices.
 
-A modular and scalable end-to-end (E2E) test framework built using Playwright (TypeScript).  
-Designed to support automation, reporting, and observability in modern web application testing.
+---
+
+## 🚀 Why This Repository Matters
+
+- **Automation First**: Clean, modular Playwright test architecture.
+- **Observability Ready**: HTML and JSON reporting for real-time test insights.
+- **CI/CD Integrated**: GitHub Actions pipeline for automated test execution.
+- **Scalable Design**: Structured for future API testing, visual testing, and dashboard integrations.
+
 
 ---
 
