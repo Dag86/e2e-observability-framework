@@ -27,7 +27,7 @@ jobs:
         run: npx playwright install
 
       - name: 🧪 Run Playwright tests and generate reports
-        run: npx playwright test --reporter=list,json=reports/json-reports/report.json
+        run: npx playwright test
 
       - name: 📈 Parse and publish dynamic test metrics
         if: always()
