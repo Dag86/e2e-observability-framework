@@ -2,8 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 /**
- * Parses the Playwright JSON report and publishes dynamic metrics into GitHub Actions Summary.
- * Usage: `npx tsx src/utils/parse-report.ts`
+ * Parses Playwright JSON report and publishes metrics to GitHub Actions Summary.
  */
 async function main() {
   const reportPath = path.resolve('reports/json-reports/report.json');
@@ -13,8 +12,14 @@ async function main() {
     process.exit(1);
   }
 
-  const reportContent = fs.readFileSync(reportPath, 'utf-8');
-  const reportJson = JSON.parse(reportContent);
+  let reportJson;
+  try {
+    const reportContent = await fs.promises.readFile(reportPath, 'utf-8');
+    reportJson = JSON.parse(reportContent);
+  } catch (error) {
+    console.error('❌ Failed to read or parse the JSON report:', error);
+    process.exit(1);
+  }
 
   let totalTests = 0;
   let passedTests = 0;
@@ -39,29 +44,35 @@ async function main() {
     }
   }
 
+  const passRate = totalTests > 0 ? ((passedTests / totalTests) * 100).toFixed(2) : '0.00';
+
   const summaryPath = process.env.GITHUB_STEP_SUMMARY;
   if (!summaryPath) {
     console.error('❌ Error: GITHUB_STEP_SUMMARY environment variable not found.');
     process.exit(1);
   }
 
-  const summary = `
+  const summaryContent = `
 ## 📈 Dynamic Test Metrics Summary
 
 - **Total Tests**: ${totalTests}
 - **Passed**: ${passedTests}
 - **Failed**: ${failedTests}
 - **Flaky**: ${flakyTests}
+- **Pass Rate**: ${passRate}%
 - **Total Duration**: ${(totalDurationMs / 1000).toFixed(2)} seconds
 
 ✅ Test results parsed and published dynamically.
-  `.trim();
+`.trim();
 
-  fs.appendFileSync(summaryPath, summary + '\n');
-  console.log('✅ Dynamic Test Metrics successfully published to GitHub Actions Summary.');
+  try {
+    await fs.promises.appendFile(summaryPath, summaryContent + '\n');
+    console.log('✅ Dynamic Test Metrics successfully published to GitHub Actions Summary.');
+    process.exit(0);
+  } catch (error) {
+    console.error('❌ Failed to write summary to GitHub Actions:', error);
+    process.exit(1);
+  }
 }
 
-main().catch((error) => {
-  console.error('❌ Unexpected error occurred while parsing test report:', error);
-  process.exit(1);
-});
+main();
