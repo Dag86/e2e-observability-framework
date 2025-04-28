@@ -1,4 +1,4 @@
-name: E2E Playwright Tests
+name: E2E Playwright Framework
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    name: Run Playwright E2E Tests
+    name: Run Playwright E2E Framework
     runs-on: ubuntu-latest
 
     steps:
