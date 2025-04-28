@@ -31,7 +31,9 @@ jobs:
 
     - name: Parse and publish dynamic test metrics
       if: always()
-      run: npx tsx src/utils/parse-report.ts
+      run: |
+       echo "Parsing dynamic metrics..."
+       npx tsx src/utils/parse-report.ts || echo "⚠️ Parse step failed but continuing"
 
     - name: Upload Playwright HTML Report
       if: always()
