@@ -1,0 +1,3 @@
+# Ignore generated HTML reports from language stats
+reports/*.html linguist-vendored
+reports/**/*.html linguist-vendored
