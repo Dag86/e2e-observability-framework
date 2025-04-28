@@ -1,4 +1,4 @@
-name: E2E Playwright Framework
+name: 🛡️ E2E Playwright Framework
 
 on:
   push:
@@ -8,53 +8,51 @@ on:
 
 jobs:
   test:
-    name: Run Playwright E2E Framework
+    name: 🧪 Run Playwright Tests
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    - name: Install project dependencies
-      run: npm ci
+      - name: 📦 Install dependencies
+        run: npm ci
 
-    - name: Install Playwright browsers
-      run: npx playwright install
+      - name: 🎭 Install Playwright browsers
+        run: npx playwright install
 
-    - name: Run Playwright tests
-      run: npx playwright test --reporter=list,json
+      - name: 🧪 Run Playwright tests and generate reports
+        run: npx playwright test --reporter=list,json=reports/json-reports/report.json
 
-    - name: Parse and publish dynamic test metrics
-      if: always()
-      run: |
-       echo "Parsing dynamic metrics..."
-       npx tsx src/utils/parse-report.ts || echo "⚠️ Parse step failed but continuing"
+      - name: 📈 Parse and publish dynamic test metrics
+        if: always()
+        run: |
+          echo "🔍 Parsing dynamic test metrics..."
+          npx tsx src/utils/parse-report.ts || echo "⚠️ Parse step failed, continuing"
 
-    - name: Upload Playwright HTML Report
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: playwright-html-report
-        path: reports/playwright-reports
-      continue-on-error: true
+      - name: 🗂️ Upload Playwright HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-html-report
+          path: reports/playwright-reports
 
-    - name: Upload Playwright JSON Report
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: playwright-json-report
-        path: reports/json-reports
-      continue-on-error: true
+      - name: 🗂️ Upload Playwright JSON Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-json-report
+          path: reports/json-reports
 
-    - name: Publish static test execution summary
-      if: always()
-      run: |
-        echo "## ✅ Test Execution Artifacts" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "- HTML report uploaded to Artifacts." >> $GITHUB_STEP_SUMMARY
-        echo "- JSON report available for parsing or future observability integrations."
+      - name: 📝 Publish static test execution summary
+        if: always()
+        run: |
+          echo "## ✅ Test Execution Artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎭 HTML report uploaded to Artifacts." >> $GITHUB_STEP_SUMMARY
+          echo "- 📄 JSON report available for observability integrations." >> $GITHUB_STEP_SUMMARY
