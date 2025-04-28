@@ -14,16 +14,25 @@ export class HomePage {
   }
 
   async addTodo(todoText: string) {
-    await this.page.fill(HomePageSelectors.newTodoInput, todoText);
-    await this.page.press(HomePageSelectors.newTodoInput, 'Enter');
+    await this.page.locator(HomePageSelectors.newTodoInput).fill(todoText);
+    await this.page.locator(HomePageSelectors.newTodoInput).press('Enter');
   }
+  
 
   async assertTodoVisible(todoText: string) {
     await this.page.waitForSelector(HomePageSelectors.todoTitle);
   }
   async filterTodos(filterName: 'All' | 'Active' | 'Completed') {
-    await this.page.click(`text=${filterName}`);
-    
+    let href = '#/';
+    if (filterName === 'Active') href = '#/active';
+    if (filterName === 'Completed') href = '#/completed';
+  
+    await this.page.locator(`ul.filters >> a[href="${href}"]`).click();
   }
+  
+  
+  async clearCompleted() {
+    await this.page.click(HomePageSelectors.clearCompletedButton);
+  }  
   
 }

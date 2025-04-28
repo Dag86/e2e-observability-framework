@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 2
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -42,9 +42,9 @@
       {
         "outputDir": "C:/Users/chosh/OneDrive/Desktop/e2e-observability-framework/test-results",
         "repeatEach": 1,
-        "retries": 1,
+        "retries": 0,
         "metadata": {
-          "actualWorkers": 2
+          "actualWorkers": 1
         },
         "id": "Chromium",
         "name": "Chromium",
@@ -58,9 +58,9 @@
       {
         "outputDir": "C:/Users/chosh/OneDrive/Desktop/e2e-observability-framework/test-results",
         "repeatEach": 1,
-        "retries": 1,
+        "retries": 0,
         "metadata": {
-          "actualWorkers": 2
+          "actualWorkers": 1
         },
         "id": "Firefox",
         "name": "Firefox",
@@ -74,151 +74,74 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "updateSourceMethod": "patch",
+    "updateSourceMethod": "3way",
     "version": "1.52.0",
     "workers": 6,
     "webServer": null
   },
   "suites": [
     {
-      "title": "regression\\delete-todo.spec.ts",
-      "file": "regression/delete-todo.spec.ts",
+      "title": "smoke\\todo-persistence-and-filtering.spec.ts",
+      "file": "smoke/todo-persistence-and-filtering.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [],
-      "suites": [
+      "specs": [
         {
-          "title": "@regression Delete Todo",
-          "file": "regression/delete-todo.spec.ts",
-          "line": 6,
-          "column": 15,
-          "specs": [
+          "title": "should correctly filter Active, Completed, and All todos",
+          "ok": true,
+          "tags": [],
+          "tests": [
             {
-              "title": "User can delete a todo item",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chromium",
+              "projectName": "Chromium",
+              "results": [
                 {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Chromium",
-                  "projectName": "Chromium",
-                  "results": [
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1201,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1835,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Navigate to the Todo App",
-                          "duration": 876
-                        },
-                        {
-                          "title": "Create a new Todo item",
-                          "duration": 318
-                        },
-                        {
-                          "title": "Verify the Todo item was created",
-                          "duration": 32
-                        },
-                        {
-                          "title": "Hover over and delete the Todo item",
-                          "duration": 207
-                        },
-                        {
-                          "title": "Verify the Todo item no longer exists",
-                          "duration": 18
-                        }
-                      ],
-                      "startTime": "2025-04-28T17:54:53.555Z",
-                      "annotations": [],
-                      "attachments": []
+                      "title": "Verify only active task is visible",
+                      "duration": 29
+                    },
+                    {
+                      "title": "Verify only completed task is visible",
+                      "duration": 14
+                    },
+                    {
+                      "title": "Verify all tasks are visible",
+                      "duration": 9
                     }
                   ],
-                  "status": "expected"
-                }
-              ],
-              "id": "c0271a9a27e4862d0fc2-a84dd51034fd6c7ed7a5",
-              "file": "regression/delete-todo.spec.ts",
-              "line": 7,
-              "column": 7
-            },
-            {
-              "title": "User can delete a todo item",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
+                  "startTime": "2025-04-28T20:49:28.135Z",
                   "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Firefox",
-                  "projectName": "Firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "passed",
-                      "duration": 3216,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Navigate to the Todo App",
-                          "duration": 600
-                        },
-                        {
-                          "title": "Create a new Todo item",
-                          "duration": 345
-                        },
-                        {
-                          "title": "Verify the Todo item was created",
-                          "duration": 41
-                        },
-                        {
-                          "title": "Hover over and delete the Todo item",
-                          "duration": 322
-                        },
-                        {
-                          "title": "Verify the Todo item no longer exists",
-                          "duration": 81
-                        }
-                      ],
-                      "startTime": "2025-04-28T17:54:53.527Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "attachments": []
                 }
               ],
-              "id": "c0271a9a27e4862d0fc2-f6f9d14fe37b4e4e10bb",
-              "file": "regression/delete-todo.spec.ts",
-              "line": 7,
-              "column": 7
+              "status": "expected"
             }
-          ]
+          ],
+          "id": "4c824394cb2f7c5e3437-1f957abb6125cc41e60b",
+          "file": "smoke/todo-persistence-and-filtering.spec.ts",
+          "line": 4,
+          "column": 5
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-04-28T17:54:52.284Z",
-    "duration": 6501.77,
-    "expected": 2,
+    "startTime": "2025-04-28T20:49:25.767Z",
+    "duration": 3826.4659999990836,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
