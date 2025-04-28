@@ -38,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: playwright-html-report
-        path: reports/playwright-reports/
+        path: reports/playwright-reports
       continue-on-error: true
 
     - name: Upload Playwright JSON Report
@@ -46,7 +46,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: playwright-json-report
-        path: reports/json-reports/
+        path: reports/json-reports
       continue-on-error: true
 
     - name: Publish static test execution summary
