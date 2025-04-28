@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "reporter": [
@@ -42,9 +42,9 @@
       {
         "outputDir": "C:/Users/chosh/OneDrive/Desktop/e2e-observability-framework/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "Chromium",
         "name": "Chromium",
@@ -58,9 +58,9 @@
       {
         "outputDir": "C:/Users/chosh/OneDrive/Desktop/e2e-observability-framework/test-results",
         "repeatEach": 1,
-        "retries": 0,
+        "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 4
         },
         "id": "Firefox",
         "name": "Firefox",
@@ -74,74 +74,196 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "updateSourceMethod": "3way",
+    "updateSourceMethod": "patch",
     "version": "1.52.0",
     "workers": 6,
     "webServer": null
   },
   "suites": [
     {
-      "title": "smoke\\todo-persistence-and-filtering.spec.ts",
-      "file": "smoke/todo-persistence-and-filtering.spec.ts",
+      "title": "api\\health-check.spec.ts",
+      "file": "api/health-check.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [
+      "specs": [],
+      "suites": [
         {
-          "title": "should correctly filter Active, Completed, and All todos",
-          "ok": true,
-          "tags": [],
-          "tests": [
+          "title": "@api TodoMVC App Health Check",
+          "file": "api/health-check.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
             {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Chromium",
-              "projectName": "Chromium",
-              "results": [
+              "title": "Home page is reachable and returns HTML",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
                 {
-                  "workerIndex": 12,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 1201,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "steps": [
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
                     {
-                      "title": "Verify only active task is visible",
-                      "duration": 29
-                    },
-                    {
-                      "title": "Verify only completed task is visible",
-                      "duration": 14
-                    },
-                    {
-                      "title": "Verify all tasks are visible",
-                      "duration": 9
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 284,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-28T23:21:24.061Z",
+                      "annotations": [],
+                      "attachments": []
                     }
                   ],
-                  "startTime": "2025-04-28T20:49:28.135Z",
-                  "annotations": [],
-                  "attachments": []
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
+              "id": "83d34aa3c591aac4a7d3-2d2ba6e24010866d3359",
+              "file": "api/health-check.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "Home page is reachable and returns HTML",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 269,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-28T23:21:24.112Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "83d34aa3c591aac4a7d3-ffb96ba1555e82e94ba5",
+              "file": "api/health-check.spec.ts",
+              "line": 4,
+              "column": 7
             }
-          ],
-          "id": "4c824394cb2f7c5e3437-1f957abb6125cc41e60b",
-          "file": "smoke/todo-persistence-and-filtering.spec.ts",
-          "line": 4,
-          "column": 5
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api\\negative-cases.spec.ts",
+      "file": "api/negative-cases.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@api TodoMVC App Negative Tests",
+          "file": "api/negative-cases.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Returns 404 for invalid endpoint",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 270,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-28T23:21:24.073Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a2397aa1139fc9f3ad1c-5690f7eb290e0eaaecb3",
+              "file": "api/negative-cases.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "Returns 404 for invalid endpoint",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 258,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-28T23:21:24.118Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a2397aa1139fc9f3ad1c-78c8f38bd9c14074ff22",
+              "file": "api/negative-cases.spec.ts",
+              "line": 4,
+              "column": 7
+            }
+          ]
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-04-28T20:49:25.767Z",
-    "duration": 3826.4659999990836,
-    "expected": 1,
+    "startTime": "2025-04-28T23:21:22.367Z",
+    "duration": 2083.457,
+    "expected": 4,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

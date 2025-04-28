@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
+    "test:debug": "npx playwright test --headed --debug",
+    "test:api": "npx playwright test --grep @api",
     "test:smoke": "npx playwright test --grep @smoke",
     "test:regression": "npx playwright test --grep @regression",
     "clean:reports": "rimraf test-results",
