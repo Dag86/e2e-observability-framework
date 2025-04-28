@@ -4,7 +4,7 @@ node_modules/
 # Playwright test reports
 playwright-report/
 test-results/
-reports/
+
 
 # Environment files
 .env
