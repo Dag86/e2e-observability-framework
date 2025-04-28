@@ -5,8 +5,13 @@
   "main": "index.js",
   "scripts": {
       "test": "npx playwright test",
+      "test:smoke": "npx playwright test --grep @smoke",
+      "test:regression": "npx playwright test --grep @regression",
       "clean:reports": "rimraf test-results",
-      "test:clean": "npm run clean:reports && npm run test"
+      "test:clean": "npm run clean:reports && npm run test",
+      "test:chromium": "npx playwright test --project=Chromium",
+      "test:firefox": "npx playwright test --project=Firefox",
+      "test:webkit": "npx playwright test --project=WebKit"
     },
   "keywords": [],
   "author": "",
