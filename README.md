@@ -4,6 +4,8 @@
 ![Playwright](https://img.shields.io/badge/Playwright-E2E-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
+![CI](https://github.com/Dag86/e2e-observability-framework/actions/workflows/playwright.yml/badge.svg)
+
 
 A modular and scalable end-to-end (E2E) test framework built using Playwright (TypeScript).  
 Designed to support automation, reporting, and observability in modern web application testing.
