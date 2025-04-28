@@ -4,15 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "test": "npx playwright test",
-      "test:smoke": "npx playwright test --grep @smoke",
-      "test:regression": "npx playwright test --grep @regression",
-      "clean:reports": "rimraf test-results",
-      "test:clean": "npm run clean:reports && npm run test",
-      "test:chromium": "npx playwright test --project=Chromium",
-      "test:firefox": "npx playwright test --project=Firefox",
-      "test:webkit": "npx playwright test --project=WebKit"
-    },
+    "test": "npx playwright test",
+    "test:smoke": "npx playwright test --grep @smoke",
+    "test:regression": "npx playwright test --grep @regression",
+    "clean:reports": "rimraf test-results",
+    "test:clean": "npm run clean:reports && npm run test",
+    "test:chromium": "npx playwright test --project=Chromium",
+    "test:firefox": "npx playwright test --project=Firefox",
+    "test:webkit": "npx playwright test --project=WebKit"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -22,7 +22,8 @@
     "@types/node": "^22.15.2",
     "eslint": "^9.25.1",
     "prettier": "^3.5.3",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.3"
   },
   "dependencies": {
     "dotenv": "^16.5.0",
