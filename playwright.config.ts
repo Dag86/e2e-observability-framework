@@ -3,23 +3,33 @@ import { BASE_URL } from './src/constants/urls';
 
 export default defineConfig({
   testDir: './src/tests',
-  timeout: 30 * 1000, // 30 seconds per test
+  
+  // Global timeouts
+  timeout: 30 * 1000,  // Each test max 30 seconds
   expect: {
-    timeout: 5000, // 5 seconds for expect assertions
+    timeout: 5 * 1000,  // Each assertion max 5 seconds
   },
-  fullyParallel: true, // Run tests in parallel
-  retries: 1, // Retry once on failure (useful for CI)
+
+  fullyParallel: true,
+  retries: 1, // Retry once on failure (helps on CI flakes)
+
   reporter: [
-    ['list'],
+    ['list'], // Console output
     ['json', { outputFile: 'reports/json-reports/report.json' }],
     ['html', { outputFolder: 'reports/playwright-reports', open: 'never' }]
   ],
+
   use: {
-    headless: true, // Default headless, can override with CLI
+    headless: true,
+    baseURL: BASE_URL,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    baseURL: BASE_URL 
+    trace: 'retain-on-failure', // 🛡️ Add trace only on failure too (easy debugging!)
+    launchOptions: {
+      slowMo: 50, // 🛡️ Slight slowMo makes test flakiness almost disappear without making tests slow
+    },
   },
+
   projects: [
     {
       name: 'Chromium',
@@ -28,7 +38,8 @@ export default defineConfig({
     {
       name: 'Firefox',
       use: { browserName: 'firefox' },
-    }
+    },
+    // You can enable WebKit later when ready
     // {
     //   name: 'WebKit',
     //   use: { browserName: 'webkit' },
