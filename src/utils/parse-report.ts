@@ -22,17 +22,22 @@ async function main() {
   let flakyTests = 0;
   let totalDurationMs = 0;
 
-  for (const suite of reportJson.suites || []) {
-    for (const spec of suite.specs || []) {
-      totalTests++;
-      const status = spec.tests?.[0]?.results?.[0]?.status;
-      const duration = spec.tests?.[0]?.results?.[0]?.duration || 0;
+  const suites = reportJson.suites || [];
 
-      if (status === 'passed') passedTests++;
-      else if (status === 'failed') failedTests++;
-      else if (status === 'flaky') flakyTests++;
+  for (const topLevelSuite of suites) {
+    for (const nestedSuite of topLevelSuite.suites || []) {
+      for (const spec of nestedSuite.specs || []) {
+        totalTests++;
+        const result = spec.tests?.[0]?.results?.[0];
 
-      totalDurationMs += duration;
+        if (result?.status === 'passed') passedTests++;
+        else if (result?.status === 'failed') failedTests++;
+        else if (result?.status === 'flaky') flakyTests++;
+
+        if (result?.duration) {
+          totalDurationMs += result.duration;
+        }
+      }
     }
   }
 
@@ -50,7 +55,7 @@ async function main() {
 - **Failed**: ${failedTests}
 - **Flaky**: ${flakyTests}
 - **Total Duration**: ${(totalDurationMs / 1000).toFixed(2)} seconds
-  `;
+`;
 
   fs.appendFileSync(summaryPath, summaryContent.trim());
   console.log('✅ Published dynamic test summary to GitHub Actions summary.');
