@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -46,7 +46,8 @@ jobs:
     - name: Publish GitHub Action Summary
       if: always()
       run: |
-        echo "## Test Execution Summary" >> $GITHUB_STEP_SUMMARY
+        echo "## ✅ Test Execution Completed" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        npx playwright show-report --browser
+        echo "- HTML report is available in the Artifacts section." >> $GITHUB_STEP_SUMMARY
+        echo "- JSON report is available for future parsing." >> $GITHUB_STEP_SUMMARY
 
