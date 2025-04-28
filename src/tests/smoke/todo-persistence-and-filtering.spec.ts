@@ -16,12 +16,16 @@ test.describe('@smoke Todo App UI Behavior', () => {
 
     // Filter Active
     await homePage.filterTodos('Active');
+    await page.waitForURL('**/active'); // 🛠️ Explicit wait for URL after clicking filter
+
     const activeItems = page.locator(HomePageSelectors.todoTitle);
     await expect(activeItems).toHaveCount(1);
     await expect(activeItems.first()).toContainText('First active task');
 
     // Filter Completed
     await homePage.filterTodos('Completed');
+    await page.waitForURL('**/completed'); // 🛠️ Explicit wait for URL after clicking filter
+
     const completedItems = page.locator(HomePageSelectors.todoTitle);
     await expect(completedItems).toHaveCount(1);
     await expect(completedItems.first()).toContainText('Second completed task');
