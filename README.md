@@ -41,7 +41,7 @@ Built for scalability, clarity, and real-world CI/CD pipelines.
 
 ---
 
-# 🛋️ Project Structure
+# 🏫 Project Structure
 
 ```plaintext
 / (root)

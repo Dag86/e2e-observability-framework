@@ -2,7 +2,7 @@
 # It uses the Grafana Loki and Promtail images and configures them to work together.
 services:
   loki:
-    image: grafana/loki:2.9.7
+    image: grafana/loki:latest
     container_name: loki
     ports:
       - "3100:3100"
@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
 
   promtail:
-    image: grafana/promtail:2.9.7
+    image: grafana/promtail:latest
     container_name: promtail
     volumes:
       - /var/log:/var/log
