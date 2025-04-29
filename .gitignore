@@ -28,3 +28,7 @@ coverage/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Promtail runtime state
+/tmp/positions.yaml
+

@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 6
     },
     "preserveOutput": "always",
     "reporter": [
@@ -44,7 +44,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 6
         },
         "id": "Chromium",
         "name": "Chromium",
@@ -60,7 +60,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 6
         },
         "id": "Firefox",
         "name": "Firefox",
@@ -81,112 +81,309 @@
   },
   "suites": [
     {
-      "title": "api\\health-check.spec.ts",
-      "file": "api/health-check.spec.ts",
+      "title": "smoke\\simulated-failed-test.spec.ts",
+      "file": "smoke/simulated-failed-test.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [],
-      "suites": [
+      "specs": [
         {
-          "title": "@api TodoMVC App Health Check",
-          "file": "api/health-check.spec.ts",
-          "line": 3,
-          "column": 6,
-          "specs": [
+          "title": "@smoke Simulated failure",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
             {
-              "title": "Home page is reachable and returns HTML",
-              "ok": true,
-              "tags": [
-                "api"
-              ],
-              "tests": [
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chromium",
+              "projectName": "Chromium",
+              "results": [
                 {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Chromium",
-                  "projectName": "Chromium",
-                  "results": [
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1831,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts:5:13",
+                    "location": {
+                      "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                      "column": 13,
+                      "line": 5
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'@smoke Simulated failure'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://example.com'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// ❌ This will always fail\u001b[39m\n \u001b[90m   |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 284,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-04-28T23:21:24.061Z",
-                      "annotations": [],
-                      "attachments": []
+                      "location": {
+                        "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                        "column": 13,
+                        "line": 5
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'@smoke Simulated failure'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://example.com'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// ❌ This will always fail\u001b[39m\n \u001b[90m   |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts:5:13\u001b[22m"
                     }
                   ],
-                  "status": "expected"
-                }
-              ],
-              "id": "83d34aa3c591aac4a7d3-2d2ba6e24010866d3359",
-              "file": "api/health-check.spec.ts",
-              "line": 4,
-              "column": 7
-            },
-            {
-              "title": "Home page is reachable and returns HTML",
-              "ok": true,
-              "tags": [
-                "api"
-              ],
-              "tests": [
-                {
-                  "timeout": 30000,
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-29T17:17:33.502Z",
                   "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Firefox",
-                  "projectName": "Firefox",
-                  "results": [
+                  "attachments": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
-                      "status": "passed",
-                      "duration": 269,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-04-28T23:21:24.112Z",
-                      "annotations": [],
-                      "attachments": []
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Chromium\\video.webm"
+                    },
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Chromium\\trace.zip"
                     }
                   ],
-                  "status": "expected"
+                  "errorLocation": {
+                    "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                    "column": 13,
+                    "line": 5
+                  }
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 743,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts:5:13",
+                    "location": {
+                      "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                      "column": 13,
+                      "line": 5
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'@smoke Simulated failure'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://example.com'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// ❌ This will always fail\u001b[39m\n \u001b[90m   |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                        "column": 13,
+                        "line": 5
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'@smoke Simulated failure'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://example.com'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// ❌ This will always fail\u001b[39m\n \u001b[90m   |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts:5:13\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-04-29T17:17:39.477Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Chromium-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Chromium-retry1\\video.webm"
+                    },
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Chromium-retry1\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Chromium-retry1\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                    "column": 13,
+                    "line": 5
+                  }
                 }
               ],
-              "id": "83d34aa3c591aac4a7d3-ffb96ba1555e82e94ba5",
-              "file": "api/health-check.spec.ts",
-              "line": 4,
-              "column": 7
+              "status": "unexpected"
             }
-          ]
+          ],
+          "id": "7a0bbdbad69730ba420f-7bbae193ad0e38233a41",
+          "file": "smoke/simulated-failed-test.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "@smoke Simulated failure",
+          "ok": false,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Firefox",
+              "projectName": "Firefox",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 3276,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts:5:13",
+                    "location": {
+                      "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                      "column": 13,
+                      "line": 5
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'@smoke Simulated failure'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://example.com'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// ❌ This will always fail\u001b[39m\n \u001b[90m   |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                        "column": 13,
+                        "line": 5
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'@smoke Simulated failure'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://example.com'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// ❌ This will always fail\u001b[39m\n \u001b[90m   |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts:5:13\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-04-29T17:17:39.448Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Firefox\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Firefox\\video.webm"
+                    },
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Firefox\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Firefox\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                    "column": 13,
+                    "line": 5
+                  }
+                },
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 2,
+                  "status": "failed",
+                  "duration": 3014,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts:5:13",
+                    "location": {
+                      "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                      "column": 13,
+                      "line": 5
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'@smoke Simulated failure'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://example.com'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// ❌ This will always fail\u001b[39m\n \u001b[90m   |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                        "column": 13,
+                        "line": 5
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m2\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m'@smoke Simulated failure'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://example.com'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   expect(\u001b[35m1\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m2\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// ❌ This will always fail\u001b[39m\n \u001b[90m   |\u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts:5:13\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-04-29T17:17:52.386Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Firefox-retry1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Firefox-retry1\\video.webm"
+                    },
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Firefox-retry1\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\test-results\\smoke-simulated-failed-test--smoke-Simulated-failure-Firefox-retry1\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\chosh\\OneDrive\\Desktop\\e2e-observability-framework\\src\\tests\\smoke\\simulated-failed-test.spec.ts",
+                    "column": 13,
+                    "line": 5
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "7a0bbdbad69730ba420f-6d84ede723bd24e5eb05",
+          "file": "smoke/simulated-failed-test.spec.ts",
+          "line": 3,
+          "column": 5
         }
       ]
     },
     {
-      "title": "api\\negative-cases.spec.ts",
-      "file": "api/negative-cases.spec.ts",
+      "title": "smoke\\todo-flow.spec.ts",
+      "file": "smoke/todo-flow.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "@api TodoMVC App Negative Tests",
-          "file": "api/negative-cases.spec.ts",
-          "line": 3,
+          "title": "@smoke Todo Flow",
+          "file": "smoke/todo-flow.spec.ts",
+          "line": 13,
           "column": 6,
           "specs": [
             {
-              "title": "Returns 404 for invalid endpoint",
+              "title": "User can create and complete a todo item: \"Wash the car\"",
               "ok": true,
               "tags": [
-                "api"
+                "smoke"
               ],
               "tests": [
                 {
@@ -200,12 +397,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 270,
+                      "duration": 2433,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-04-28T23:21:24.073Z",
+                      "startTime": "2025-04-29T17:17:33.474Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -213,16 +410,125 @@
                   "status": "expected"
                 }
               ],
-              "id": "a2397aa1139fc9f3ad1c-5690f7eb290e0eaaecb3",
-              "file": "api/negative-cases.spec.ts",
-              "line": 4,
-              "column": 7
+              "id": "6527987f24503a072ace-d5f39d04f4527c6f3d35",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
             },
             {
-              "title": "Returns 404 for invalid endpoint",
+              "title": "User can create and complete a todo item: \"Buy groceries\"",
               "ok": true,
               "tags": [
-                "api"
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2500,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-29T17:17:33.497Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-75e53e4ab44987fae7e6",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "User can create and complete a todo item: \"!@#$%^&*()_+\"",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "#$%^&*()_+\""
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 2721,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-29T17:17:33.478Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-8c28f423f6fe0a1cf6ea",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "User can create and complete a todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 2461,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-29T17:17:33.491Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-d643f4bdc5d6f25ccaae",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "User can create and complete a todo item: \"Wash the car\"",
+              "ok": true,
+              "tags": [
+                "smoke"
               ],
               "tests": [
                 {
@@ -233,15 +539,15 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 8,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 258,
+                      "duration": 6876,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-04-28T23:21:24.118Z",
+                      "startTime": "2025-04-29T17:17:39.557Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -249,9 +555,428 @@
                   "status": "expected"
                 }
               ],
-              "id": "a2397aa1139fc9f3ad1c-78c8f38bd9c14074ff22",
-              "file": "api/negative-cases.spec.ts",
-              "line": 4,
+              "id": "6527987f24503a072ace-261c4132332b6b764fa5",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "User can create and complete a todo item: \"Buy groceries\"",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 7012,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-29T17:17:39.909Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-96f94f2202abf1ae7e7b",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "User can create and complete a todo item: \"!@#$%^&*()_+\"",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "#$%^&*()_+\""
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 8771,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-29T17:17:40.249Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-9341024a71cd75cc6633",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "User can create and complete a todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 7037,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-04-29T17:17:40.805Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-c4590ce3f9c2b20a90ae",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "smoke\\todo-persistence-and-filtering.spec.ts",
+      "file": "smoke/todo-persistence-and-filtering.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@smoke Todo App UI Behavior",
+          "file": "smoke/todo-persistence-and-filtering.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should correctly filter Active and Completed todos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 3379,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Verify only active task is visible",
+                          "duration": 100
+                        },
+                        {
+                          "title": "Verify only completed task is visible",
+                          "duration": 65
+                        }
+                      ],
+                      "startTime": "2025-04-29T17:17:33.542Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4c824394cb2f7c5e3437-4aca36296e5b0829fe75",
+              "file": "smoke/todo-persistence-and-filtering.spec.ts",
+              "line": 7,
+              "column": 7
+            },
+            {
+              "title": "should persist todos after page reload",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1465,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Verify the todo persists after reload",
+                          "duration": 41
+                        }
+                      ],
+                      "startTime": "2025-04-29T17:17:36.384Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4c824394cb2f7c5e3437-f4e575cd2935119169b2",
+              "file": "smoke/todo-persistence-and-filtering.spec.ts",
+              "line": 36,
+              "column": 7
+            },
+            {
+              "title": "should correctly filter Active and Completed todos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9362,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Verify only active task is visible",
+                          "duration": 268
+                        },
+                        {
+                          "title": "Verify only completed task is visible",
+                          "duration": 139
+                        }
+                      ],
+                      "startTime": "2025-04-29T17:17:43.303Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4c824394cb2f7c5e3437-6669e1978fe06d97f3d5",
+              "file": "smoke/todo-persistence-and-filtering.spec.ts",
+              "line": 7,
+              "column": 7
+            },
+            {
+              "title": "should persist todos after page reload",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 4914,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Verify the todo persists after reload",
+                          "duration": 82
+                        }
+                      ],
+                      "startTime": "2025-04-29T17:17:48.701Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4c824394cb2f7c5e3437-65cff132ae44bb3cf7b4",
+              "file": "smoke/todo-persistence-and-filtering.spec.ts",
+              "line": 36,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "smoke\\verify-filter-function.spec.ts",
+      "file": "smoke/verify-filter-function.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@smoke HomePage filterTodos Function Verification",
+          "file": "smoke/verify-filter-function.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should correctly filter Active, Completed, and All todos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 2089,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Verify only active task is visible",
+                          "duration": 49
+                        },
+                        {
+                          "title": "Verify only completed task is visible",
+                          "duration": 42
+                        },
+                        {
+                          "title": "Verify all tasks are visible",
+                          "duration": 52
+                        }
+                      ],
+                      "startTime": "2025-04-29T17:17:36.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f0ebc010c07e84af5486-8e703182c47467511e65",
+              "file": "smoke/verify-filter-function.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "should correctly filter Active, Completed, and All todos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 6087,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Verify only active task is visible",
+                          "duration": 83
+                        },
+                        {
+                          "title": "Verify only completed task is visible",
+                          "duration": 85
+                        },
+                        {
+                          "title": "Verify all tasks are visible",
+                          "duration": 77
+                        }
+                      ],
+                      "startTime": "2025-04-29T17:17:49.574Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f0ebc010c07e84af5486-043dc5f3bf50d8498b78",
+              "file": "smoke/verify-filter-function.spec.ts",
+              "line": 6,
               "column": 7
             }
           ]
@@ -261,11 +986,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-04-28T23:21:22.367Z",
-    "duration": 2083.457,
-    "expected": 4,
+    "startTime": "2025-04-29T17:17:31.583Z",
+    "duration": 27436.814,
+    "expected": 14,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 2,
     "flaky": 0
   }
 }

@@ -13,7 +13,8 @@
     "test:clean": "npm run clean:reports && npm run test",
     "test:chromium": "npx playwright test --project=Chromium",
     "test:firefox": "npx playwright test --project=Firefox",
-    "test:webkit": "npx playwright test --project=WebKit"
+    "test:webkit": "npx playwright test --project=WebKit",
+    "start:metrics-server": "tsx src/observability/metrics-server.ts"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +30,8 @@
   },
   "dependencies": {
     "dotenv": "^16.5.0",
-    "faker": "^6.6.6"
+    "express": "^5.1.0",
+    "faker": "^6.6.6",
+    "prom-client": "^15.1.3"
   }
 }

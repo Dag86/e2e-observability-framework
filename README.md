@@ -1,159 +1,188 @@
-# 🎯 E2E Observability Testing Platform
+# 🚀 E2E Observability Framework for Playwright
 
-![Node.js](https://img.shields.io/badge/Node.js-14.x-blue.svg)
-![Playwright](https://img.shields.io/badge/Playwright-E2E-green)
-![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue)
-![API Testing](https://img.shields.io/badge/API-Testing-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![CI](https://github.com/Dag86/e2e-observability-framework/actions/workflows/playwright.yml/badge.svg)
+![Node.js](https://img.shields.io/badge/Node.js-20.x-brightgreen)
+![Playwright](https://img.shields.io/badge/Playwright-E2E-blueviolet)
+![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-orange)
+![Grafana](https://img.shields.io/badge/Grafana-Dashboard-orange)
+![Loki](https://img.shields.io/badge/Loki-Logs-yellowgreen)
+![Docker](https://img.shields.io/badge/docker-ready-blue)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![CI](https://github.com/your-username/your-repo-name/actions/workflows/ci.yml/badge.svg)
 
-A modular and scalable End-to-End (E2E) testing platform built with **Playwright**, designed for modern software delivery pipelines.  
-This project integrates automation, reporting, observability, and CI/CD best practices.
+A production-grade **End-to-End Testing and Observability Framework** combining:
 
----
+- **Playwright** (Automated E2E Testing)
+- **Prometheus** (Metrics Scraping)
+- **Grafana** (Dashboard Visualization + Alerts)
+- **Loki + Promtail** (Log Aggregation)
 
-## 🚀 Why This Repository Matters
-
-- **Automation First**: Clean, modular Playwright test architecture.
-- **Observability Ready**: HTML and JSON reporting for real-time test insights.
-- **CI/CD Integrated**: GitHub Actions pipeline for automated test execution.
-- **Scalable Design**: Structured for future API testing, visual testing, and dashboard integrations.
-
----
-
-## 🚀 Tech Stack
-
-- Playwright (TypeScript)
-- Node.js
-- GitHub Actions (ready for CI/CD)
-- Docker-ready for future observability integrations
+Built for scalability, clarity, and real-world CI/CD pipelines.
 
 ---
 
-## 🛡️ Test Coverage Overview
+# 📈 Why This Project?
 
-This framework covers:
-
-- ✅ End-to-End (E2E) UI automation
-- ✅ API health check validation
-- ✅ Dynamic reporting into GitHub Actions
-- ✅ CI/CD integration with artifact upload
+- **Automation First:** Robust E2E UI/API testing with Playwright
+- **Observability Live:** Real-time metrics and logs capture with Prometheus, Loki, and Grafana
+- **CI/CD Integrated:** GitHub Actions automates testing and artifact publishing
 
 ---
 
-## 🧪 Test Types
+# 🔧 Tech Stack
 
-| Suite | Description |
-|:---|:---|
-| Smoke | Core workflows: Create and complete todos, persistence, and filtering |
-| Regression | Edge case testing: Delete active/completed todos, prevent empty input |
-| API | Health check of the Playwright TodoMVC application endpoint |
-
-✅ Test data is fully abstracted.  
-✅ Selectors are fully centralized.  
-✅ Test actions are modularized with a custom `step()` helper for better reporting.
+| Layer         | Tools                                                  |
+| ------------- | ------------------------------------------------------ |
+| Testing       | Playwright (TypeScript)                                |
+| Metrics       | Prometheus + Metrics Server (Express.js + prom-client) |
+| Visualization | Grafana                                                |
+| Logs          | Loki + Promtail                                        |
+| CI/CD         | GitHub Actions                                         |
+| Runtime       | Node.js 20.x                                           |
 
 ---
 
-## 📂 Project Structure
+# 🛋️ Project Structure
 
-```bash
-src/
-├── config/
-├── constants/
-│   ├── selectors.ts
-│   ├── test-data.ts
-|   |-- urls.ts
-├── pages/
-│   ├── HomePage.ts
-├── tests/
-│   ├── smoke/
-│   │   ├── todo-flow.spec.ts
-│   │   ├── todo-persistence-and-filtering.spec.ts
-│   ├── regression/
-│   │   ├── delete-todo.spec.ts
-│   │   ├── complete-and-delete-todo.spec.ts
-│   │   ├── empty-todo-validation.spec.ts
-├── utils/
-│   ├── step-helper.ts
-reports/
-.github/
-├── workflows/
-│   ├── playwright.yml
-playwright.config.ts
-package.json
-README.md
+```plaintext
+/ (root)
+├── src/
+│   ├── config/
+│   ├── constants/
+│   ├── pages/
+│   ├── tests/
+│   ├── utils/
+│   └── observability/
+│       └── metrics-server.ts
+├── reports/
+│   ├── json-reports/
+│   ├── playwright-reports/
+├── prometheus/
+│   └── prometheus.yml
+├── observability/
+│   ├── docker-compose.loki.yml
+│   ├── promtail-config.yaml
+├── .github/
+│   └── workflows/
+├── package.json
+├── README.md
+├── TestStrategy.md
+└── .gitignore
 ```
 
 ---
 
-## ⚙️ Running Tests
+# 📊 Reporting and Observability
 
-### Install Dependencies
+### 🔄 Test Reports
 
+- **Playwright HTML Report**
+- **Playwright JSON Report**
+
+### 🔢 Metrics Observability
+
+- **Total Tests** (`playwright_total_tests`)
+- **Passed Tests** (`playwright_passed_tests`)
+- **Failed Tests** (`playwright_failed_tests`)
+
+### 🔍 Log Observability
+
+- **System Logs** scraped from `/var/log/*.log` via Promtail
+- **Metrics Server Logs** (expandable)
+
+All metrics and logs are visualized through **Grafana Dashboards**.
+
+---
+
+# ⚖️ Test Coverage
+
+- **UI Flows:**
+  - Add Todo
+  - Toggle Todo
+  - Delete Todo
+  - Filter Todos
+  - Navigate via URL hash (All, Active, Completed)
+- **API Health Checks:**
+  - Example or mock API routes if applicable (optional)
+
+---
+
+# ⚙️ Running the Framework
+
+1. Install dependencies
 ```bash
 npm install
 ```
 
-### Run All Tests
-
+2. Run all Playwright tests
 ```bash
 npm run test
 ```
 
-### Run Only Smoke Tests
+3. Run Playwright tests with different options:
 
+- Debug mode:
 ```bash
-npx playwright test --grep "@smoke"
+npm run test:debug
 ```
 
-### Run Only Regression Tests
-
+- Smoke tests:
 ```bash
-npx playwright test --grep "@regression"
+npm run test:smoke
 ```
 
-### Run in Specific Browsers
+- Regression tests:
+```bash
+npm run test:regression
+```
 
+- API tests:
+```bash
+npm run test:api
+```
+
+- Run Playwright tests for a specific browser:
 ```bash
 npm run test:chromium
 npm run test:firefox
 npm run test:webkit
 ```
 
-### View HTML Report
-
+4. Clean and re-run tests
 ```bash
-npx playwright show-report
+npm run test:clean
+```
+
+5. Start Metrics Server
+```bash
+npm run start:metrics-server
+```
+
+6. Start Observability Stack (Loki + Promtail)
+```bash
+cd observability
+
+docker-compose -f docker-compose.loki.yml up -d
+```
+
+7. Access Grafana
+```plaintext
+http://localhost:3000
 ```
 
 ---
 
-## 📈 Reporting
+# 🌟 Future Enhancements
 
-- All test execution reports are generated under `/reports/`
-- JSON and HTML reports uploaded as CI artifacts
-- GitHub Action Summary dynamically shows test results
-- Ready for observability integrations (Grafana/Prometheus future)
-
----
-
-## 🧠 Key Features
-
-- 🧩 Modular Page Object Model structure
-- 📊 Native Playwright `test.step()` integration with a custom `step()` utility helper
-- 🛠️ Dynamic summaries inside GitHub Action runs
-- 🔥 Full CRUD flow coverage across smoke and regression tests
-- 🚀 CI/CD friendly architecture
+- Slack/Email Alerts integration in Grafana
+- Advanced log filtering for test debugging
+- Full Kubernetes deployment support
+- Cloud Grafana dashboards for remote observability
 
 ---
 
-## 📈 Future Roadmap (Optional for Expansion)
+# 💼 License
 
-- Integrate Dockerized Grafana/Prometheus for real-time test observability
-- Expand API Testing Layer using `playwright.request`
-- Parallelize and shard tests across CI/CD runners
-- Flaky test detection and auto-quarantine system
-- Build visual dashboard based on test execution trends
+MIT License.
 
----
+Built with ❤️ for real-world scalable test automation and observability setups.
+
