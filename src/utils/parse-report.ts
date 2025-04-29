@@ -15,7 +15,7 @@ const failedTests = stats.unexpected ?? 0;
 const flakyTests = stats.flaky ?? 0;
 const passedTests = totalTests - failedTests;
 const duration = stats.duration ? (stats.duration / 1000).toFixed(2) : '0.00';
-const passRate = totalTests > 0 ? ((passedTests / totalTests) * 100).toFixed(2) : '0.00';
+const overallPassRate = totalTests > 0 ? (passedTests / totalTests) * 100 : 0;
 
 interface TagMetrics {
   total: number;
@@ -25,6 +25,7 @@ interface TagMetrics {
 
 const tagStats: Record<string, TagMetrics> = {};
 const validTagRegex = /^@[a-zA-Z0-9_-]+$/;
+const minimumPassRate = 95; // 🔥 Fail build if overall pass rate < 95%
 
 function extractValidTagsFromTitle(title: string): string[] {
   const matches = title?.match(/@[a-zA-Z0-9_-]+/g) || [];
@@ -72,7 +73,7 @@ if (summaryFile) {
 - Passed: ${passedTests}
 - Failed: ${failedTests}
 - Flaky: ${flakyTests}
-- Pass Rate: ${passRate}%
+- Pass Rate: ${overallPassRate.toFixed(2)}%
 - Total Duration: ${duration} seconds`;
 
   const sortedTags = Object.keys(tagStats).sort();
@@ -80,7 +81,8 @@ if (summaryFile) {
     summary += `\n\n## 🏷️ Test Tag Breakdown`;
     for (const tag of sortedTags) {
       const stats = tagStats[tag];
-      summary += `\n\n🔖 **${tag}**\n- Total: ${stats.total}\n- Passed: ${stats.passed}\n- Failed: ${stats.failed}`;
+      const tagPassRate = stats.total > 0 ? (stats.passed / stats.total) * 100 : 0;
+      summary += `\n\n🔖 **${tag}**\n- Total: ${stats.total}\n- Passed: ${stats.passed}\n- Failed: ${stats.failed}\n- Pass Rate: ${tagPassRate.toFixed(2)}%`;
     }
   }
 
@@ -93,7 +95,7 @@ console.log(`Total Tests: ${totalTests}`);
 console.log(`Passed: ${passedTests}`);
 console.log(`Failed: ${failedTests}`);
 console.log(`Flaky: ${flakyTests}`);
-console.log(`Pass Rate: ${passRate}%`);
+console.log(`Pass Rate: ${overallPassRate.toFixed(2)}%`);
 console.log(`Total Duration: ${duration} seconds`);
 
 const sortedTags = Object.keys(tagStats).sort();
@@ -101,6 +103,15 @@ if (sortedTags.length > 0) {
   console.log('\n🏷️ Tag Metrics Breakdown:');
   for (const tag of sortedTags) {
     const stats = tagStats[tag];
-    console.log(`- ${tag}: Total ${stats.total}, Passed ${stats.passed}, Failed ${stats.failed}`);
+    const tagPassRate = stats.total > 0 ? (stats.passed / stats.total) * 100 : 0;
+    console.log(`- ${tag}: Total ${stats.total}, Passed ${stats.passed}, Failed ${stats.failed}, Pass Rate ${tagPassRate.toFixed(2)}%`);
   }
+}
+
+// --- Build Fail Condition ---
+if (overallPassRate < minimumPassRate) {
+  console.error(`❌ Build failed: Overall pass rate ${overallPassRate.toFixed(2)}% is below required ${minimumPassRate}% threshold.`);
+  process.exit(1);
+} else {
+  console.log(`✅ Build passed: Overall pass rate ${overallPassRate.toFixed(2)}% meets the threshold (${minimumPassRate}%).`);
 }
