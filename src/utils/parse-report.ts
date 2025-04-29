@@ -18,7 +18,7 @@ const passedTests = totalTests - failedTests;
 const duration = stats.duration ? (stats.duration / 1000).toFixed(2) : '0.00';
 const passRate = totalTests > 0 ? ((passedTests / totalTests) * 100).toFixed(2) : '0.00';
 
-// --- New: Parse tag-based metrics ---
+// --- Tag Parsing Correctly From Specs ---
 interface TagMetrics {
   total: number;
   passed: number;
@@ -31,23 +31,30 @@ function traverseSuites(suites: any[]) {
   for (const suite of suites) {
     if (suite.specs) {
       for (const spec of suite.specs) {
-        const annotations = spec.annotations || [];
-        const tags = annotations.map((a: any) => a.description).filter((d: string) => d.startsWith('@'));
-        const testResults = spec.tests || [];
+        const tags = spec.tags || [];
+        const tests = spec.tests || [];
 
-        for (const result of testResults) {
-          for (const tag of tags) {
-            if (!tagStats[tag]) {
-              tagStats[tag] = { total: 0, passed: 0, failed: 0 };
-            }
+        for (const tag of tags) {
+          if (!tagStats[tag]) {
+            tagStats[tag] = { total: 0, passed: 0, failed: 0 };
+          }
+
+          for (const test of tests) {
             tagStats[tag].total++;
 
-            if (result.status === 'passed') tagStats[tag].passed++;
-            if (result.status === 'failed') tagStats[tag].failed++;
+            for (const result of test.results || []) {
+              if (result.status === 'passed') {
+                tagStats[tag].passed++;
+              }
+              if (result.status === 'failed') {
+                tagStats[tag].failed++;
+              }
+            }
           }
         }
       }
     }
+
     if (suite.suites) {
       traverseSuites(suite.suites);
     }
@@ -55,7 +62,6 @@ function traverseSuites(suites: any[]) {
 }
 
 traverseSuites(report.suites || []);
-// --- End New Tag Parsing ---
 
 // --- Write to GITHUB_STEP_SUMMARY ---
 const summaryFile = process.env.GITHUB_STEP_SUMMARY;
@@ -95,7 +101,7 @@ console.log(`Pass Rate: ${passRate}%`);
 console.log(`Total Duration: ${duration} seconds`);
 console.log('✅ Test results parsed and published dynamically.');
 
-// Log Tag Summary in console too
+
 if (Object.keys(tagStats).length > 0) {
   console.log('🏷️ Tag Metrics Breakdown:');
   for (const [tag, stats] of Object.entries(tagStats)) {
