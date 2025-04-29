@@ -18,7 +18,7 @@ const passedTests = totalTests - failedTests;
 const duration = stats.duration ? (stats.duration / 1000).toFixed(2) : '0.00';
 const passRate = totalTests > 0 ? ((passedTests / totalTests) * 100).toFixed(2) : '0.00';
 
-// --- Tag Parsing Correctly From Specs ---
+// --- Clean Tag Parsing ---
 interface TagMetrics {
   total: number;
   passed: number;
@@ -26,6 +26,7 @@ interface TagMetrics {
 }
 
 const tagStats: Record<string, TagMetrics> = {};
+const validTagRegex = /^@[a-zA-Z0-9_-]+$/;
 
 function traverseSuites(suites: any[]) {
   for (const suite of suites) {
@@ -35,6 +36,10 @@ function traverseSuites(suites: any[]) {
         const tests = spec.tests || [];
 
         for (const tag of tags) {
+          if (!validTagRegex.test(tag)) {
+            continue; // Skip invalid tags like weird special characters
+          }
+
           if (!tagStats[tag]) {
             tagStats[tag] = { total: 0, passed: 0, failed: 0 };
           }
@@ -80,7 +85,7 @@ if (summaryFile) {
     summary += `\n## 🏷️ Test Tag Breakdown\n`;
     for (const [tag, stats] of Object.entries(tagStats)) {
       summary += `
-**${tag}**
+🔖 **${tag}**
 - Total: ${stats.total}
 - Passed: ${stats.passed}
 - Failed: ${stats.failed}
