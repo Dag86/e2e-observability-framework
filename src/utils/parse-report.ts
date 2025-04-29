@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 
 const reportPath = path.resolve('reports/json-reports/report.json');
-
 if (!fs.existsSync(reportPath)) {
   console.error('❌ Report file not found.');
   process.exit(1);
@@ -18,7 +17,6 @@ const passedTests = totalTests - failedTests;
 const duration = stats.duration ? (stats.duration / 1000).toFixed(2) : '0.00';
 const passRate = totalTests > 0 ? ((passedTests / totalTests) * 100).toFixed(2) : '0.00';
 
-// --- Tag Parsing Correctly From Specs ---
 interface TagMetrics {
   total: number;
   passed: number;
@@ -26,34 +24,31 @@ interface TagMetrics {
 }
 
 const tagStats: Record<string, TagMetrics> = {};
-const validTagRegex = /^@[a-zA-Z0-9_-]+$/; // ✅ Only accept clean tags like @smoke, @regression, etc.
+const validTagRegex = /^@[a-zA-Z0-9_-]+$/;
 
-function traverseSuites(suites: any[]) {
+function extractTagFromTitle(title: string): string[] {
+  const match = title.match(/(@[a-zA-Z0-9_-]+)/g);
+  return match || [];
+}
+
+function walkSuites(suites: any[], parentTags: string[] = []) {
   for (const suite of suites) {
+    const currentTags = [...parentTags, ...extractTagFromTitle(suite.title)];
+    const validTags = currentTags.filter(tag => validTagRegex.test(tag));
+
     if (suite.specs) {
       for (const spec of suite.specs) {
-        const tags = spec.tags || [];
         const tests = spec.tests || [];
-
-        for (const tag of tags) {
-          if (!validTagRegex.test(tag)) {
-            continue; // 🚨 Skip invalid/garbage tags
-          }
-
-          if (!tagStats[tag]) {
-            tagStats[tag] = { total: 0, passed: 0, failed: 0 };
-          }
-
-          for (const test of tests) {
-            tagStats[tag].total++;
-
-            for (const result of test.results || []) {
-              if (result.status === 'passed') {
-                tagStats[tag].passed++;
+        for (const test of tests) {
+          for (const result of test.results || []) {
+            for (const tag of validTags) {
+              if (!tagStats[tag]) {
+                tagStats[tag] = { total: 0, passed: 0, failed: 0 };
               }
-              if (result.status === 'failed') {
-                tagStats[tag].failed++;
-              }
+
+              tagStats[tag].total++;
+              if (result.status === 'passed') tagStats[tag].passed++;
+              else if (result.status === 'failed') tagStats[tag].failed++;
             }
           }
         }
@@ -61,14 +56,14 @@ function traverseSuites(suites: any[]) {
     }
 
     if (suite.suites) {
-      traverseSuites(suite.suites);
+      walkSuites(suite.suites, validTags);
     }
   }
 }
 
-traverseSuites(report.suites || []);
+walkSuites(report.suites || []);
 
-// --- Write to GITHUB_STEP_SUMMARY ---
+// --- Write to GitHub Summary ---
 const summaryFile = process.env.GITHUB_STEP_SUMMARY;
 if (summaryFile) {
   let summary = `
@@ -78,8 +73,7 @@ if (summaryFile) {
 - Failed: ${failedTests}
 - Flaky: ${flakyTests}
 - Pass Rate: ${passRate}%
-- Total Duration: ${duration} seconds
-  `;
+- Total Duration: ${duration} seconds`;
 
   if (Object.keys(tagStats).length > 0) {
     summary += `\n## 🏷️ Test Tag Breakdown\n`;
@@ -88,15 +82,14 @@ if (summaryFile) {
 🔖 **${tag}**
 - Total: ${stats.total}
 - Passed: ${stats.passed}
-- Failed: ${stats.failed}
-`;
+- Failed: ${stats.failed}`;
     }
   }
 
   fs.appendFileSync(summaryFile, summary);
 }
 
-// --- Always log to console ---
+// --- Console Log Output ---
 console.log('📈 Dynamic Test Metrics Summary');
 console.log(`Total Tests: ${totalTests}`);
 console.log(`Passed: ${passedTests}`);
@@ -104,7 +97,6 @@ console.log(`Failed: ${failedTests}`);
 console.log(`Flaky: ${flakyTests}`);
 console.log(`Pass Rate: ${passRate}%`);
 console.log(`Total Duration: ${duration} seconds`);
-console.log('✅ Test results parsed and published dynamically.');
 
 if (Object.keys(tagStats).length > 0) {
   console.log('🏷️ Tag Metrics Breakdown:');
