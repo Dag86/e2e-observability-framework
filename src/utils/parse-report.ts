@@ -18,7 +18,7 @@ const passedTests = totalTests - failedTests;
 const duration = stats.duration ? (stats.duration / 1000).toFixed(2) : '0.00';
 const passRate = totalTests > 0 ? ((passedTests / totalTests) * 100).toFixed(2) : '0.00';
 
-// --- Clean Tag Parsing ---
+// --- Tag Parsing Correctly From Specs ---
 interface TagMetrics {
   total: number;
   passed: number;
@@ -26,7 +26,7 @@ interface TagMetrics {
 }
 
 const tagStats: Record<string, TagMetrics> = {};
-const validTagRegex = /^@[a-zA-Z0-9_-]+$/;
+const validTagRegex = /^@[a-zA-Z0-9_-]+$/; // ✅ Only accept clean tags like @smoke, @regression, etc.
 
 function traverseSuites(suites: any[]) {
   for (const suite of suites) {
@@ -37,7 +37,7 @@ function traverseSuites(suites: any[]) {
 
         for (const tag of tags) {
           if (!validTagRegex.test(tag)) {
-            continue; // Skip invalid tags like weird special characters
+            continue; // 🚨 Skip invalid/garbage tags
           }
 
           if (!tagStats[tag]) {
@@ -105,7 +105,6 @@ console.log(`Flaky: ${flakyTests}`);
 console.log(`Pass Rate: ${passRate}%`);
 console.log(`Total Duration: ${duration} seconds`);
 console.log('✅ Test results parsed and published dynamically.');
-
 
 if (Object.keys(tagStats).length > 0) {
   console.log('🏷️ Tag Metrics Breakdown:');
