@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, step } from '../../utils/custom-test';
 import { HomePage } from '../../pages/HomePage';
 import { HomePageSelectors } from '../../constants/selectors';
 import { TestData } from '../../constants/test-data';
@@ -15,20 +15,27 @@ test.describe('@smoke Todo Flow', () => {
     test(`User can create and complete a todo item: "${todoText}"`, async ({ page }) => {
       const homePage = new HomePage(page);
 
-      await homePage.gotoHomePage();
+      await step('Navigate to the Todo App', async () => {
+        await homePage.gotoHomePage();
+      });
 
-      // Step 1: Create a Todo
-      await homePage.addTodo(todoText);
+      await step(`Create a Todo item: "${todoText}"`, async () => {
+        await homePage.addTodo(todoText);
+      });
 
-      // Step 2: Verify Todo was created
-      const todoItem = page.locator(HomePageSelectors.todoTitle);
-      await expect(todoItem).toBeVisible();
+      await step('Verify Todo was created', async () => {
+        const todoItem = page.locator(HomePageSelectors.todoTitle);
+        await expect(todoItem).toBeVisible();
+      });
 
-      // Step 3: Complete the Todo
-      await page.check(HomePageSelectors.todoToggle);
+      await step('Complete the Todo item', async () => {
+        await page.check(HomePageSelectors.todoToggle);
+      });
 
-      // Step 4: Verify Todo is marked as completed
-      await expect(todoItem).toHaveCSS('text-decoration-line', 'line-through');
+      await step('Verify Todo is marked as completed', async () => {
+        const todoItem = page.locator(HomePageSelectors.todoTitle);
+        await expect(todoItem).toHaveCSS('text-decoration-line', 'line-through');
+      });
     });
   }
 });

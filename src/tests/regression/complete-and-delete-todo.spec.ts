@@ -1,18 +1,16 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, step } from '../../utils/custom-test';
 import { HomePage } from '../../pages/HomePage';
 import { HomePageSelectors } from '../../constants/selectors';
 import { TestData } from '../../constants/test-data';
-import { step } from '../../utils/step-helper';
 
 test.describe('@regression Complete and Delete Todo', () => {
   test('User can complete a todo item and then delete it', async ({ page }) => {
     const homePage = new HomePage(page);
+    const todoText = TestData.todoItem.basic;
 
     await step('Navigate to the Todo App', async () => {
       await homePage.gotoHomePage();
     });
-
-    const todoText = TestData.todoItem.basic;
 
     await step('Create a new Todo item', async () => {
       await homePage.addTodo(todoText);

@@ -12,10 +12,10 @@ clients:
   - url: http://loki:3100/loki/api/v1/push
 
 scrape_configs:
-  - job_name: system
+  - job_name: playwright-logs
     static_configs:
       - targets:
           - localhost
         labels:
-          job: varlogs
-          __path__: /var/log/*log
+          job: playwright-logs
+          __path__: /app/logs/*.log  # ✅ Match mounted logs path

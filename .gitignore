@@ -21,6 +21,9 @@ Thumbs.db
 logs/
 *.log
 
+
+.playwright-log-reporter.js
+
 # Coverage reports
 coverage/
 
@@ -32,3 +35,6 @@ coverage/
 # Promtail runtime state
 /tmp/positions.yaml
 
+# Ignore everything in logs folder except .gitkeep
+reports/logs/
+!reports/logs/.gitkeep

@@ -1,22 +1,23 @@
 import { defineConfig } from '@playwright/test';
 import { BASE_URL } from './src/constants/urls';
 
+
 export default defineConfig({
   testDir: './src/tests',
-  
-  // Global timeouts
-  timeout: 30 * 1000,  // Each test max 30 seconds
+
+  timeout: 30 * 1000,
   expect: {
-    timeout: 5 * 1000,  // Each assertion max 5 seconds
+    timeout: 5 * 1000,
   },
 
   fullyParallel: true,
-  retries: 1, // Retry once on failure (helps on CI flakes)
+  retries: 1,
 
   reporter: [
-    ['list'], // Console output
+    ['list'],
     ['json', { outputFile: 'reports/json-reports/report.json' }],
-    ['html', { outputFolder: 'reports/playwright-reports', open: 'never' }]
+    ['html', { outputFolder: 'reports/playwright-reports', open: 'never' }],
+    ['./src/utils/log-reporter.ts'] // ✅ Custom log reporter now fully valid
   ],
 
   use: {
@@ -24,9 +25,9 @@ export default defineConfig({
     baseURL: BASE_URL,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    trace: 'retain-on-failure', // 🛡️ Add trace only on failure too (easy debugging!)
+    trace: 'retain-on-failure',
     launchOptions: {
-      slowMo: 50, // 🛡️ Slight slowMo makes test flakiness almost disappear without making tests slow
+      slowMo: 50,
     },
   },
 
@@ -39,7 +40,6 @@ export default defineConfig({
       name: 'Firefox',
       use: { browserName: 'firefox' },
     },
-    // You can enable WebKit later when ready
     // {
     //   name: 'WebKit',
     //   use: { browserName: 'webkit' },
