@@ -12,27 +12,27 @@ const todoItems = [
 
 test.describe('@smoke Todo Flow', () => {
   for (const todoText of todoItems) {
-    test(`User can create and complete a todo item: "${todoText}"`, async ({ page }) => {
+    test(`Should create and complete a todo item: "${todoText}"`, async ({ page }) => {
       const homePage = new HomePage(page);
 
-      await step('Navigate to the Todo App', async () => {
+      await step('Should navigate to the Todo App', async () => {
         await homePage.gotoHomePage();
       });
 
-      await step(`Create a Todo item: "${todoText}"`, async () => {
+      await step(`Should create a Todo item: "${todoText}"`, async () => {
         await homePage.addTodo(todoText);
       });
 
-      await step('Verify Todo was created', async () => {
+      await step('Should verify Todo was created', async () => {
         const todoItem = page.locator(HomePageSelectors.todoTitle);
         await expect(todoItem).toBeVisible();
       });
 
-      await step('Complete the Todo item', async () => {
+      await step('Should complete the Todo item', async () => {
         await page.check(HomePageSelectors.todoToggle);
       });
 
-      await step('Verify Todo is marked as completed', async () => {
+      await step('Should verify Todo is marked as completed', async () => {
         const todoItem = page.locator(HomePageSelectors.todoTitle);
         await expect(todoItem).toHaveCSS('text-decoration-line', 'line-through');
       });

@@ -2,9 +2,10 @@
 node_modules/
 
 # Playwright test reports
-playwright-report/
+reports/playwright-reports/
 test-results/
-
+reports/json-reports
+.playwright-log-reporter.js
 
 # Environment files
 .env
@@ -18,19 +19,14 @@ Thumbs.db
 .vscode/
 
 # Logs
-logs/
+reports/logs/
 *.log
 
 
-.playwright-log-reporter.js
 
 # Coverage reports
 coverage/
 
-# Playwright
-/playwright-report/
-/blob-report/
-/playwright/.cache/
 
 # Promtail runtime state
 /tmp/positions.yaml

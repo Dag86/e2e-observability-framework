@@ -4,30 +4,27 @@ import { HomePageSelectors } from '../../constants/selectors';
 import { TestData } from '../../constants/test-data';
 
 test.describe('@regression Complete and Delete Todo', () => {
-  test('User can complete a todo item and then delete it', async ({ page }) => {
+  test('Should complete a todo item and then delete it', async ({ page }) => {
     const homePage = new HomePage(page);
     const todoText = TestData.todoItem.basic;
 
-    await step('Navigate to the Todo App', async () => {
+    await step('Should navigate to the Todo App', async () => {
       await homePage.gotoHomePage();
     });
 
-    await step('Create a new Todo item', async () => {
+    await step('Should create a new Todo item', async () => {
       await homePage.addTodo(todoText);
     });
 
-    await step('Complete the Todo item', async () => {
-      const todoToggle = page.locator(HomePageSelectors.todoToggle);
-      await todoToggle.check();
+    await step('Should complete the Todo item', async () => {
+      await homePage.completeTodo(todoText);
     });
 
-    await step('Hover over and delete the completed Todo item', async () => {
-      const todoItem = page.locator(HomePageSelectors.todoTitle);
-      await todoItem.hover();
-      await page.click(HomePageSelectors.todoDeleteButton);
+    await step('Should hover over and delete the completed Todo item', async () => {
+      await homePage.deleteTodo(todoText);
     });
 
-    await step('Verify the completed Todo item no longer exists', async () => {
+    await step('Should verify the completed Todo item no longer exists', async () => {
       const todoItems = page.locator(HomePageSelectors.todoTitle);
       await expect(todoItems).toHaveCount(0);
     });

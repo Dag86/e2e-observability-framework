@@ -115,7 +115,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3365,
+                      "duration": 7703,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -123,26 +123,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 1046
+                          "duration": 4300
                         },
                         {
                           "title": "Create a Todo item: \"Wash the car\"",
-                          "duration": 508
+                          "duration": 716
                         },
                         {
                           "title": "Verify Todo was created",
-                          "duration": 56
+                          "duration": 67
                         },
                         {
                           "title": "Complete the Todo item",
-                          "duration": 622
+                          "duration": 735
                         },
                         {
                           "title": "Verify Todo is marked as completed",
-                          "duration": 108
+                          "duration": 329
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:01.580Z",
+                      "startTime": "2025-04-30T03:20:52.848Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -173,7 +173,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 3248,
+                      "duration": 6872,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -181,26 +181,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 1218
+                          "duration": 4218
                         },
                         {
                           "title": "Create a Todo item: \"Buy groceries\"",
-                          "duration": 520
+                          "duration": 700
                         },
                         {
                           "title": "Verify Todo was created",
-                          "duration": 45
+                          "duration": 76
                         },
                         {
                           "title": "Complete the Todo item",
-                          "duration": 262
+                          "duration": 334
                         },
                         {
                           "title": "Verify Todo is marked as completed",
-                          "duration": 167
+                          "duration": 50
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:01.693Z",
+                      "startTime": "2025-04-30T03:20:52.763Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -232,7 +232,7 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 3271,
+                      "duration": 6850,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -240,26 +240,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 1123
+                          "duration": 4245
                         },
                         {
                           "title": "Create a Todo item: \"!@#$%^&*()_+\"",
-                          "duration": 498
+                          "duration": 698
                         },
                         {
                           "title": "Verify Todo was created",
-                          "duration": 55
+                          "duration": 76
                         },
                         {
                           "title": "Complete the Todo item",
-                          "duration": 346
+                          "duration": 336
                         },
                         {
                           "title": "Verify Todo is marked as completed",
-                          "duration": 374
+                          "duration": 97
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:01.616Z",
+                      "startTime": "2025-04-30T03:20:52.804Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -290,7 +290,7 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 3183,
+                      "duration": 7685,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -298,26 +298,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 1160
+                          "duration": 4020
                         },
                         {
                           "title": "Create a Todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
-                          "duration": 527
+                          "duration": 813
                         },
                         {
                           "title": "Verify Todo was created",
-                          "duration": 56
+                          "duration": 847
                         },
                         {
                           "title": "Complete the Todo item",
-                          "duration": 295
+                          "duration": 328
                         },
                         {
                           "title": "Verify Todo is marked as completed",
-                          "duration": 70
+                          "duration": 51
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:01.684Z",
+                      "startTime": "2025-04-30T03:20:52.846Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -345,10 +345,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 7,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 9603,
+                      "duration": 10797,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -356,26 +356,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 2331
+                          "duration": 2071
                         },
                         {
                           "title": "Create a Todo item: \"Wash the car\"",
-                          "duration": 1588
+                          "duration": 1105
                         },
                         {
                           "title": "Verify Todo was created",
-                          "duration": 101
+                          "duration": 242
                         },
                         {
                           "title": "Complete the Todo item",
-                          "duration": 848
+                          "duration": 505
                         },
                         {
                           "title": "Verify Todo is marked as completed",
-                          "duration": 293
+                          "duration": 133
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:08.556Z",
+                      "startTime": "2025-04-30T03:21:04.409Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -403,10 +403,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 9,
+                      "workerIndex": 6,
                       "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 8998,
+                      "duration": 7326,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -414,26 +414,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 1602
+                          "duration": 1861
                         },
                         {
                           "title": "Create a Todo item: \"Buy groceries\"",
-                          "duration": 895
+                          "duration": 1151
                         },
                         {
                           "title": "Verify Todo was created",
-                          "duration": 551
+                          "duration": 74
                         },
                         {
                           "title": "Complete the Todo item",
-                          "duration": 2835
+                          "duration": 653
                         },
                         {
                           "title": "Verify Todo is marked as completed",
-                          "duration": 399
+                          "duration": 377
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:08.555Z",
+                      "startTime": "2025-04-30T03:21:04.424Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -462,10 +462,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 3,
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11783,
+                      "duration": 7186,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -473,26 +473,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 2152
+                          "duration": 1331
                         },
                         {
                           "title": "Create a Todo item: \"!@#$%^&*()_+\"",
-                          "duration": 1436
+                          "duration": 793
                         },
                         {
                           "title": "Verify Todo was created",
-                          "duration": 480
+                          "duration": 118
                         },
                         {
                           "title": "Complete the Todo item",
-                          "duration": 1800
+                          "duration": 1411
                         },
                         {
                           "title": "Verify Todo is marked as completed",
-                          "duration": 170
+                          "duration": 348
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:08.553Z",
+                      "startTime": "2025-04-30T03:21:04.422Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -520,10 +520,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 1,
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 8973,
+                      "duration": 7964,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -531,26 +531,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 2057
+                          "duration": 1847
                         },
                         {
                           "title": "Create a Todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
-                          "duration": 1064
+                          "duration": 627
                         },
                         {
                           "title": "Verify Todo was created",
-                          "duration": 238
+                          "duration": 330
                         },
                         {
                           "title": "Complete the Todo item",
-                          "duration": 785
+                          "duration": 906
                         },
                         {
                           "title": "Verify Todo is marked as completed",
-                          "duration": 123
+                          "duration": 1063
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:08.557Z",
+                      "startTime": "2025-04-30T03:21:04.429Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -598,7 +598,7 @@
                       "workerIndex": 4,
                       "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 3755,
+                      "duration": 7977,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -606,26 +606,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 1146
+                          "duration": 4255
                         },
                         {
                           "title": "Add multiple todos",
-                          "duration": 832
+                          "duration": 2246
                         },
                         {
                           "title": "Mark second todo as completed",
-                          "duration": 324
+                          "duration": 216
                         },
                         {
                           "title": "Filter Active todos and verify result",
-                          "duration": 339
+                          "duration": 328
                         },
                         {
                           "title": "Filter Completed todos and verify result",
-                          "duration": 231
+                          "duration": 199
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:01.643Z",
+                      "startTime": "2025-04-30T03:20:52.842Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -656,7 +656,7 @@
                       "workerIndex": 5,
                       "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 3220,
+                      "duration": 7252,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -664,22 +664,22 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 1274
+                          "duration": 4216
                         },
                         {
                           "title": "Add a persistent todo",
-                          "duration": 573
+                          "duration": 805
                         },
                         {
                           "title": "Reload the page",
-                          "duration": 329
+                          "duration": 905
                         },
                         {
                           "title": "Verify the todo persists after reload",
-                          "duration": 112
+                          "duration": 324
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:01.615Z",
+                      "startTime": "2025-04-30T03:20:52.967Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -710,7 +710,7 @@
                       "workerIndex": 10,
                       "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 13829,
+                      "duration": 11615,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -718,26 +718,26 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 1087
+                          "duration": 2666
                         },
                         {
                           "title": "Add multiple todos",
-                          "duration": 7303
+                          "duration": 2682
                         },
                         {
                           "title": "Mark second todo as completed",
-                          "duration": 385
+                          "duration": 760
                         },
                         {
                           "title": "Filter Active todos and verify result",
-                          "duration": 1000
+                          "duration": 581
                         },
                         {
                           "title": "Filter Completed todos and verify result",
-                          "duration": 1379
+                          "duration": 535
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:08.553Z",
+                      "startTime": "2025-04-30T03:21:04.436Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -766,9 +766,9 @@
                   "results": [
                     {
                       "workerIndex": 11,
-                      "parallelIndex": 0,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 8855,
+                      "duration": 10206,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -776,22 +776,22 @@
                       "steps": [
                         {
                           "title": "Navigate to the Todo App",
-                          "duration": 1438
+                          "duration": 1977
                         },
                         {
                           "title": "Add a persistent todo",
-                          "duration": 865
+                          "duration": 1132
                         },
                         {
                           "title": "Reload the page",
-                          "duration": 3175
+                          "duration": 3270
                         },
                         {
                           "title": "Verify the todo persists after reload",
-                          "duration": 173
+                          "duration": 195
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:09.465Z",
+                      "startTime": "2025-04-30T03:21:05.255Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -836,10 +836,10 @@
                   "projectName": "Chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 1998,
+                      "duration": 2027,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -847,30 +847,30 @@
                       "steps": [
                         {
                           "title": "Navigate to Home Page",
-                          "duration": 501
+                          "duration": 537
                         },
                         {
                           "title": "Add two todos",
-                          "duration": 441
+                          "duration": 451
                         },
                         {
                           "title": "Mark the second todo as completed",
-                          "duration": 144
+                          "duration": 153
                         },
                         {
                           "title": "Test Active Filter and verify only active task is visible",
-                          "duration": 228
+                          "duration": 200
                         },
                         {
                           "title": "Test Completed Filter and verify only completed task is visible",
-                          "duration": 161
+                          "duration": 166
                         },
                         {
                           "title": "Test All Filter and verify both tasks are visible",
-                          "duration": 154
+                          "duration": 179
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:05.405Z",
+                      "startTime": "2025-04-30T03:21:00.784Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -899,9 +899,9 @@
                   "results": [
                     {
                       "workerIndex": 9,
-                      "parallelIndex": 5,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 5528,
+                      "duration": 7844,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -909,30 +909,30 @@
                       "steps": [
                         {
                           "title": "Navigate to Home Page",
-                          "duration": 1246
+                          "duration": 2252
                         },
                         {
                           "title": "Add two todos",
-                          "duration": 1247
+                          "duration": 1576
                         },
                         {
                           "title": "Mark the second todo as completed",
-                          "duration": 258
+                          "duration": 264
                         },
                         {
                           "title": "Test Active Filter and verify only active task is visible",
-                          "duration": 540
+                          "duration": 795
                         },
                         {
                           "title": "Test Completed Filter and verify only completed task is visible",
-                          "duration": 332
+                          "duration": 372
                         },
                         {
                           "title": "Test All Filter and verify both tasks are visible",
-                          "duration": 360
+                          "duration": 225
                         }
                       ],
-                      "startTime": "2025-04-30T03:09:20.337Z",
+                      "startTime": "2025-04-30T03:21:13.608Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -952,8 +952,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-04-30T03:08:59.547Z",
-    "duration": 29049.555,
+    "startTime": "2025-04-30T03:20:50.761Z",
+    "duration": 33063.789,
     "expected": 14,
     "skipped": 0,
     "unexpected": 0,
