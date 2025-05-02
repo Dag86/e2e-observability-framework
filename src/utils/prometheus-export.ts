@@ -109,4 +109,27 @@ if (overallPassRate < minimumPassRate) {
 } else {
   console.log(`✅ Build passed: Overall pass rate ${overallPassRate.toFixed(2)}%`);
 }
+const summaryFile = process.env.GITHUB_STEP_SUMMARY;
+if (summaryFile) {
+  let summary = `## 📈 Dynamic Test Metrics Summary\n`;
+  summary += `- Total Tests: ${totalTests}\n`;
+  summary += `- Passed: ${passedTests}\n`;
+  summary += `- Failed: ${failedTests}\n`;
+  summary += `- Flaky: ${flakyTests}\n`;
+  summary += `- Pass Rate: ${overallPassRate.toFixed(2)}%\n`;
+  summary += `- Total Duration: ${duration} seconds\n`;
+
+  const sortedTags = Object.keys(tagStats).sort();
+  if (sortedTags.length > 0) {
+    summary += `\n### 🏷️ Test Breakdown by Tag\n`;
+    for (const tag of sortedTags) {
+      const t = tagStats[tag];
+      const tagRate = t.total > 0 ? (t.passed / t.total) * 100 : 0;
+      summary += `- ${tag}: ${t.total} total, ${t.passed} passed, ${t.failed} failed, ${tagRate.toFixed(2)}% pass rate\n`;
+    }
+  }
+
+  fs.appendFileSync(summaryFile, summary);
+}
+
 module.exports = { register };
