@@ -111,25 +111,34 @@ if (overallPassRate < minimumPassRate) {
 }
 const summaryFile = process.env.GITHUB_STEP_SUMMARY;
 if (summaryFile) {
-  let summary = `## 📈 Dynamic Test Metrics Summary\n`;
-  summary += `- Total Tests: ${totalTests}\n`;
-  summary += `- Passed: ${passedTests}\n`;
-  summary += `- Failed: ${failedTests}\n`;
-  summary += `- Flaky: ${flakyTests}\n`;
-  summary += `- Pass Rate: ${overallPassRate.toFixed(2)}%\n`;
-  summary += `- Total Duration: ${duration} seconds\n`;
+  const passIcon = overallPassRate >= minimumPassRate ? '✅' : '❌';
+
+  let summary = `## 📈 Dynamic Test Metrics Summary ${passIcon}\n\n`;
+  summary += `| Metric         | Value |\n`;
+  summary += `|----------------|-------|\n`;
+  summary += `| Total Tests    | ${totalTests} |\n`;
+  summary += `| Passed         | ${passedTests} |\n`;
+  summary += `| Failed         | ${failedTests} |\n`;
+  summary += `| Flaky          | ${flakyTests} |\n`;
+  summary += `| Pass Rate      | ${overallPassRate.toFixed(2)}% ${passIcon} |\n`;
+  summary += `| Duration       | ${duration} sec |\n`;
 
   const sortedTags = Object.keys(tagStats).sort();
   if (sortedTags.length > 0) {
-    summary += `\n### 🏷️ Test Breakdown by Tag\n`;
+    summary += `\n### 🏷️ Test Breakdown by Tag\n\n`;
+    summary += `| Tag | Total | Passed | Failed | Pass Rate |\n`;
+    summary += `|-----|-------|--------|--------|-----------|\n`;
+
     for (const tag of sortedTags) {
       const t = tagStats[tag];
       const tagRate = t.total > 0 ? (t.passed / t.total) * 100 : 0;
-      summary += `- ${tag}: ${t.total} total, ${t.passed} passed, ${t.failed} failed, ${tagRate.toFixed(2)}% pass rate\n`;
+      const icon = tagRate >= minimumPassRate ? '✅' : '❌';
+      summary += `| ${tag} | ${t.total} | ${t.passed} | ${t.failed} | ${tagRate.toFixed(2)}% ${icon} |\n`;
     }
   }
 
   fs.appendFileSync(summaryFile, summary);
 }
+
 
 module.exports = { register };
