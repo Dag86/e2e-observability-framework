@@ -35,7 +35,7 @@ jobs:
       if: always()
       run: |
         echo "🔍 Parsing dynamic test metrics..."
-        npx tsx src/utils/parse-report.ts || echo "⚠️ Metrics parsing failed, continuing."
+        npx tsx src/utils/prometheus-export.ts || echo "⚠️ Metrics parsing failed, continuing."
 
     - name: Upload Playwright HTML Report
       if: always()

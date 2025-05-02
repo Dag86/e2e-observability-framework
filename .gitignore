@@ -22,7 +22,7 @@ Thumbs.db
 reports/logs/
 *.log
 
-observability\loki-data
+observability/loki-data
 
 # Coverage reports
 coverage/
