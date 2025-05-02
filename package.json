@@ -21,7 +21,7 @@
     "test:firefox": "npx playwright test --project=Firefox",
     "test:webkit": "npx playwright test --project=WebKit",
 
-    "start:metrics-server": "tsx src/metrics/metrics-server.ts"
+    "start:metrics-server": "tsx src/utils/metrics-server.ts"
   },
   "keywords": [],
   "author": "",

@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 6
     },
     "preserveOutput": "always",
     "reporter": [
@@ -48,7 +48,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 6
         },
         "id": "Chromium",
         "name": "Chromium",
@@ -64,7 +64,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 4
+          "actualWorkers": 6
         },
         "id": "Firefox",
         "name": "Firefox",
@@ -130,7 +130,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 418,
+                      "duration": 604,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -138,10 +138,10 @@
                       "steps": [
                         {
                           "title": "Send GET request to TodoMVC",
-                          "duration": 332
+                          "duration": 469
                         }
                       ],
-                      "startTime": "2025-05-02T19:43:50.140Z",
+                      "startTime": "2025-05-02T22:15:44.318Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -197,10 +197,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 434,
+                      "duration": 436,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -208,10 +208,10 @@
                       "steps": [
                         {
                           "title": "Send GET request to TodoMVC",
-                          "duration": 353
+                          "duration": 308
                         }
                       ],
-                      "startTime": "2025-05-02T19:43:50.127Z",
+                      "startTime": "2025-05-02T22:15:57.252Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -277,7 +277,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 359,
+                      "duration": 633,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -285,10 +285,10 @@
                       "steps": [
                         {
                           "title": "Send GET request to invalid path",
-                          "duration": 288
+                          "duration": 492
                         }
                       ],
-                      "startTime": "2025-05-02T19:43:50.039Z",
+                      "startTime": "2025-05-02T22:15:44.314Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -326,10 +326,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 6,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 299,
+                      "duration": 410,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -337,10 +337,10 @@
                       "steps": [
                         {
                           "title": "Send GET request to invalid path",
-                          "duration": 227
+                          "duration": 314
                         }
                       ],
-                      "startTime": "2025-05-02T19:43:50.106Z",
+                      "startTime": "2025-05-02T22:15:57.259Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -361,13 +361,1351 @@
           ]
         }
       ]
+    },
+    {
+      "title": "regression\\complete-and-delete-todo.spec.ts",
+      "file": "regression/complete-and-delete-todo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@regression Complete and Delete Todo",
+          "file": "../utils/custom-test.ts",
+          "line": 16,
+          "column": 3,
+          "specs": [
+            {
+              "title": "Should complete a todo item and then delete it",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@regression"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 7303,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 3783
+                        },
+                        {
+                          "title": "Should create a new Todo item",
+                          "duration": 517
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 215
+                        },
+                        {
+                          "title": "Should hover over and delete the completed Todo item",
+                          "duration": 392
+                        },
+                        {
+                          "title": "Should verify the completed Todo item no longer exists",
+                          "duration": 55
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:44.371Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@regression"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1b9afb956cced4f1138c-0ea2ef291768d52645ff",
+              "file": "regression/complete-and-delete-todo.spec.ts",
+              "line": 7,
+              "column": 7
+            },
+            {
+              "title": "Should complete a todo item and then delete it",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@regression"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10780,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 1180
+                        },
+                        {
+                          "title": "Should create a new Todo item",
+                          "duration": 1143
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 1175
+                        },
+                        {
+                          "title": "Should hover over and delete the completed Todo item",
+                          "duration": 3316
+                        },
+                        {
+                          "title": "Should verify the completed Todo item no longer exists",
+                          "duration": 196
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:58.248Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@regression"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "1b9afb956cced4f1138c-3644c502b356bf42181b",
+              "file": "regression/complete-and-delete-todo.spec.ts",
+              "line": 7,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "regression\\delete-todo.spec.ts",
+      "file": "regression/delete-todo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@regression Delete Todo",
+          "file": "../utils/custom-test.ts",
+          "line": 16,
+          "column": 3,
+          "specs": [
+            {
+              "title": "Should delete a todo item",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@regression"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 7224,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 3748
+                        },
+                        {
+                          "title": "Should create a new Todo item",
+                          "duration": 623
+                        },
+                        {
+                          "title": "Should verify the Todo item was created",
+                          "duration": 61
+                        },
+                        {
+                          "title": "Should hover over and delete the Todo item",
+                          "duration": 632
+                        },
+                        {
+                          "title": "Should verify the Todo item no longer exists",
+                          "duration": 129
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:44.334Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@regression"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c0271a9a27e4862d0fc2-7d534e7e9de3dbe05e50",
+              "file": "regression/delete-todo.spec.ts",
+              "line": 7,
+              "column": 7
+            },
+            {
+              "title": "Should delete a todo item",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@regression"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 14222,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 3503
+                        },
+                        {
+                          "title": "Should create a new Todo item",
+                          "duration": 1331
+                        },
+                        {
+                          "title": "Should verify the Todo item was created",
+                          "duration": 503
+                        },
+                        {
+                          "title": "Should hover over and delete the Todo item",
+                          "duration": 3023
+                        },
+                        {
+                          "title": "Should verify the Todo item no longer exists",
+                          "duration": 173
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:58.226Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@regression"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c0271a9a27e4862d0fc2-5bd530fae8b8d10352af",
+              "file": "regression/delete-todo.spec.ts",
+              "line": 7,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "regression\\empty-todo-validation.spec.ts",
+      "file": "regression/empty-todo-validation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@regression Todo Validation Tests",
+          "file": "../utils/custom-test.ts",
+          "line": 16,
+          "column": 3,
+          "specs": [
+            {
+              "title": "Should not add an empty todo item",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@regression"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 6371,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 3747
+                        },
+                        {
+                          "title": "Should attempt to submit an empty todo",
+                          "duration": 379
+                        },
+                        {
+                          "title": "Should verify that no todo items were created",
+                          "duration": 102
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:44.318Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@regression"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "23308ae567a2b8e818cd-8c6f6a3514c083b8009c",
+              "file": "regression/empty-todo-validation.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Should not add an empty todo item",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@regression"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 10565,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 2787
+                        },
+                        {
+                          "title": "Should attempt to submit an empty todo",
+                          "duration": 930
+                        },
+                        {
+                          "title": "Should verify that no todo items were created",
+                          "duration": 248
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:58.321Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@regression"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "23308ae567a2b8e818cd-9112aed740032d67ea88",
+              "file": "regression/empty-todo-validation.spec.ts",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "smoke\\todo-flow.spec.ts",
+      "file": "smoke/todo-flow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@smoke Todo Flow",
+          "file": "../utils/custom-test.ts",
+          "line": 16,
+          "column": 3,
+          "specs": [
+            {
+              "title": "Should create and complete a todo item: \"Wash the car\"",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@smoke"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 7168,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 3741
+                        },
+                        {
+                          "title": "Should create a Todo item: \"Wash the car\"",
+                          "duration": 621
+                        },
+                        {
+                          "title": "Should verify Todo was created",
+                          "duration": 64
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 309
+                        },
+                        {
+                          "title": "Should verify Todo is marked as completed",
+                          "duration": 86
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:44.385Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@smoke"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-8af32f2d9f127892f152",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "Should create and complete a todo item: \"Buy groceries\"",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6528,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 3761
+                        },
+                        {
+                          "title": "Should create a Todo item: \"Buy groceries\"",
+                          "duration": 731
+                        },
+                        {
+                          "title": "Should verify Todo was created",
+                          "duration": 81
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 418
+                        },
+                        {
+                          "title": "Should verify Todo is marked as completed",
+                          "duration": 181
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:44.992Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-d6894de141d4e6f34c4c",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "Should create and complete a todo item: \"!@#$%^&*()_+\"",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "#$%^&*()_+\""
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7038,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 3753
+                        },
+                        {
+                          "title": "Should create a Todo item: \"!@#$%^&*()_+\"",
+                          "duration": 739
+                        },
+                        {
+                          "title": "Should verify Todo was created",
+                          "duration": 54
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 268
+                        },
+                        {
+                          "title": "Should verify Todo is marked as completed",
+                          "duration": 83
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:45.002Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-dde3ce8208ebd7e48ee7",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "Should create and complete a todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 1782,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 550
+                        },
+                        {
+                          "title": "Should create a Todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
+                          "duration": 324
+                        },
+                        {
+                          "title": "Should verify Todo was created",
+                          "duration": 40
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 199
+                        },
+                        {
+                          "title": "Should verify Todo is marked as completed",
+                          "duration": 49
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:52.883Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-b71556c759cd4ce546c5",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "Should create and complete a todo item: \"Wash the car\"",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@smoke"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 7476,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 1629
+                        },
+                        {
+                          "title": "Should create a Todo item: \"Wash the car\"",
+                          "duration": 991
+                        },
+                        {
+                          "title": "Should verify Todo was created",
+                          "duration": 290
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 1179
+                        },
+                        {
+                          "title": "Should verify Todo is marked as completed",
+                          "duration": 78
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:58.443Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@smoke"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-9a745006c95de0a35fa4",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "Should create and complete a todo item: \"Buy groceries\"",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 10473,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 2530
+                        },
+                        {
+                          "title": "Should create a Todo item: \"Buy groceries\"",
+                          "duration": 2469
+                        },
+                        {
+                          "title": "Should verify Todo was created",
+                          "duration": 661
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 903
+                        },
+                        {
+                          "title": "Should verify Todo is marked as completed",
+                          "duration": 153
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:57.735Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-bc745a59ca30c2ee3581",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "Should create and complete a todo item: \"!@#$%^&*()_+\"",
+              "ok": true,
+              "tags": [
+                "smoke",
+                "#$%^&*()_+\""
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 9256,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 2405
+                        },
+                        {
+                          "title": "Should create a Todo item: \"!@#$%^&*()_+\"",
+                          "duration": 1188
+                        },
+                        {
+                          "title": "Should verify Todo was created",
+                          "duration": 759
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 945
+                        },
+                        {
+                          "title": "Should verify Todo is marked as completed",
+                          "duration": 236
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:57.766Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-bd4423337486b244b87c",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "Should create and complete a todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@smoke"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 5265,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 1368
+                        },
+                        {
+                          "title": "Should create a Todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
+                          "duration": 1071
+                        },
+                        {
+                          "title": "Should verify Todo was created",
+                          "duration": 157
+                        },
+                        {
+                          "title": "Should complete the Todo item",
+                          "duration": 944
+                        },
+                        {
+                          "title": "Should verify Todo is marked as completed",
+                          "duration": 154
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:16:07.580Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@smoke"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6527987f24503a072ace-2d2943b61d386eaa49c1",
+              "file": "smoke/todo-flow.spec.ts",
+              "line": 15,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "smoke\\todo-persistence-and-filtering.spec.ts",
+      "file": "smoke/todo-persistence-and-filtering.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@smoke Todo App UI Behavior",
+          "file": "../utils/custom-test.ts",
+          "line": 16,
+          "column": 3,
+          "specs": [
+            {
+              "title": "Should correctly filter Active and Completed todos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2211,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 567
+                        },
+                        {
+                          "title": "Should add multiple todos",
+                          "duration": 619
+                        },
+                        {
+                          "title": "Should mark second todo as completed",
+                          "duration": 210
+                        },
+                        {
+                          "title": "Should filter Active todos and verify result",
+                          "duration": 267
+                        },
+                        {
+                          "title": "Should filter Completed todos and verify result",
+                          "duration": 202
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:53.100Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4c824394cb2f7c5e3437-427a7a2dd598d7e10ad5",
+              "file": "smoke/todo-persistence-and-filtering.spec.ts",
+              "line": 7,
+              "column": 7
+            },
+            {
+              "title": "hould persist todos after page reload",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1782,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 552
+                        },
+                        {
+                          "title": "Should add a persistent todo",
+                          "duration": 379
+                        },
+                        {
+                          "title": "Should reload the page",
+                          "duration": 285
+                        },
+                        {
+                          "title": "Should verify the todo persists after reload",
+                          "duration": 52
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:53.101Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4c824394cb2f7c5e3437-78b81074f751e04ac6e8",
+              "file": "smoke/todo-persistence-and-filtering.spec.ts",
+              "line": 39,
+              "column": 7
+            },
+            {
+              "title": "Should correctly filter Active and Completed todos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 4387,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 1086
+                        },
+                        {
+                          "title": "Should add multiple todos",
+                          "duration": 782
+                        },
+                        {
+                          "title": "Should mark second todo as completed",
+                          "duration": 260
+                        },
+                        {
+                          "title": "Should filter Active todos and verify result",
+                          "duration": 426
+                        },
+                        {
+                          "title": "Should filter Completed todos and verify result",
+                          "duration": 344
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:16:10.871Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4c824394cb2f7c5e3437-74c1daac3640845c48d3",
+              "file": "smoke/todo-persistence-and-filtering.spec.ts",
+              "line": 7,
+              "column": 7
+            },
+            {
+              "title": "hould persist todos after page reload",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4446,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to the Todo App",
+                          "duration": 1035
+                        },
+                        {
+                          "title": "Should add a persistent todo",
+                          "duration": 680
+                        },
+                        {
+                          "title": "Should reload the page",
+                          "duration": 1367
+                        },
+                        {
+                          "title": "Should verify the todo persists after reload",
+                          "duration": 270
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:16:12.932Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4c824394cb2f7c5e3437-93ac3f5cc38aa6403d2a",
+              "file": "smoke/todo-persistence-and-filtering.spec.ts",
+              "line": 39,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "smoke\\verify-filter-function.spec.ts",
+      "file": "smoke/verify-filter-function.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@smoke HomePage filterTodos Function Verification",
+          "file": "../utils/custom-test.ts",
+          "line": 16,
+          "column": 3,
+          "specs": [
+            {
+              "title": "Should correctly filter Active, Completed, and All todos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Chromium",
+                  "projectName": "Chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 2376,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to Home Page",
+                          "duration": 566
+                        },
+                        {
+                          "title": "Should add two todos",
+                          "duration": 581
+                        },
+                        {
+                          "title": "Should mark the second todo as completed",
+                          "duration": 234
+                        },
+                        {
+                          "title": "Should test Active Filter and verify only Active task is visible",
+                          "duration": 269
+                        },
+                        {
+                          "title": "Should test Completed Filter and verify only Completed task is visible",
+                          "duration": 168
+                        },
+                        {
+                          "title": "Should test All Filter and verify both tasks are visible",
+                          "duration": 193
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:15:53.130Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f0ebc010c07e84af5486-fd63ac3c71ac3cd969fb",
+              "file": "smoke/verify-filter-function.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Should correctly filter Active, Completed, and All todos",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Firefox",
+                  "projectName": "Firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 4925,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Should navigate to Home Page",
+                          "duration": 1300
+                        },
+                        {
+                          "title": "Should add two todos",
+                          "duration": 775
+                        },
+                        {
+                          "title": "Should mark the second todo as completed",
+                          "duration": 237
+                        },
+                        {
+                          "title": "Should test Active Filter and verify only Active task is visible",
+                          "duration": 324
+                        },
+                        {
+                          "title": "Should test Completed Filter and verify only Completed task is visible",
+                          "duration": 315
+                        },
+                        {
+                          "title": "Should test All Filter and verify both tasks are visible",
+                          "duration": 294
+                        }
+                      ],
+                      "startTime": "2025-05-02T22:16:14.877Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f0ebc010c07e84af5486-69b11e01bc417a40041f",
+              "file": "smoke/verify-filter-function.spec.ts",
+              "line": 6,
+              "column": 7
+            }
+          ]
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-05-02T19:43:48.145Z",
-    "duration": 2496.5119999999997,
-    "expected": 4,
+    "startTime": "2025-05-02T22:15:41.453Z",
+    "duration": 40295.462999999996,
+    "expected": 24,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
