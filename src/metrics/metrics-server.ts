@@ -3,37 +3,35 @@ import { Registry, Gauge, collectDefaultMetrics } from 'prom-client';
 import fs from 'fs';
 import path from 'path';
 
-// Create a Prometheus Registry
+// Prometheus Registry
 const register = new Registry();
-collectDefaultMetrics({ register }); // optional: system metrics like memory usage
+collectDefaultMetrics({ register });
 
-// Custom metrics
+// Define metrics
 const totalTestsGauge = new Gauge({
   name: 'playwright_total_tests',
   help: 'Total number of Playwright tests executed',
 });
-
 const passedTestsGauge = new Gauge({
   name: 'playwright_passed_tests',
   help: 'Number of passed Playwright tests',
 });
-
 const failedTestsGauge = new Gauge({
   name: 'playwright_failed_tests',
   help: 'Number of failed Playwright tests',
 });
 
-// Register custom gauges
+// Register them
 register.registerMetric(totalTestsGauge);
 register.registerMetric(passedTestsGauge);
 register.registerMetric(failedTestsGauge);
 
-// Function to read latest Playwright report
-function loadTestMetrics() {
+// Metrics loader with silent CLI
+function loadTestMetrics(debug = false) {
   const reportPath = path.resolve('reports/json-reports/report.json');
 
   if (!fs.existsSync(reportPath)) {
-    console.error('❌ Playwright report not found. No metrics updated.');
+    if (debug) console.error('❌ report.json not found');
     return;
   }
 
@@ -50,45 +48,38 @@ function loadTestMetrics() {
         for (const spec of suite.specs) {
           for (const test of spec.tests || []) {
             total++;
-            const hasPassed = test.results?.some((result: any) => result.status === 'passed');
-            const hasFailed = test.results?.some((result: any) => result.status === 'failed');
-
+            const hasPassed = test.results?.some((r: any) => r.status === 'passed');
+            const hasFailed = test.results?.some((r: any) => r.status === 'failed');
             if (hasFailed) failed++;
             else if (hasPassed) passed++;
           }
         }
       }
-      if (suite.suites) {
-        countTests(suite.suites); // recurse deeper if nested suites exist
-      }
+      if (suite.suites) countTests(suite.suites);
     }
   }
 
-  if (json.suites) {
-    countTests(json.suites);
-  }
+  if (json.suites) countTests(json.suites);
 
-  // Update gauges
   totalTestsGauge.set(total);
   passedTestsGauge.set(passed);
   failedTestsGauge.set(failed);
 
-  console.log(`🔍 Metrics loaded: total=${total}, passed=${passed}, failed=${failed}`);
+  if (debug) {
+    console.log(`✅ Metrics: total=${total}, passed=${passed}, failed=${failed}`);
+  }
 }
 
-
-// Create the Express app
+// Express app
 const app = express();
 
-// Scrape endpoint for Prometheus
 app.get('/metrics', async (_req, res) => {
-  loadTestMetrics(); // Refresh metrics from latest file
+  loadTestMetrics(); // silent by default
   res.setHeader('Content-Type', register.contentType);
   res.end(await register.metrics());
 });
 
-// Start server
-const PORT = 9100; // Common Prometheus scrape port
+const PORT = 9100;
 app.listen(PORT, () => {
-  console.log(`🚀 Metrics server running at http://localhost:${PORT}/metrics`);
+  console.log(`🚀 Metrics server: http://localhost:${PORT}/metrics`);
 });

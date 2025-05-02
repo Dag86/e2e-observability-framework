@@ -26,26 +26,24 @@ function writeJsonLine(data: Record<string, any>) {
 }
 
 class LogReporter implements Reporter {
-  onTestBegin(test: TestCase) {
-    // Optional log on test start
-  }
-
   onTestEnd(test: TestCase, result: TestResult) {
-    console.log('🔎 Annotations for test:', test.title);
-    console.log(result.annotations);
-
-    // Double-check tag annotations are applied correctly
     const tags = Array.isArray(result.annotations)
       ? result.annotations.filter(a => a.type === 'tag' && a.description).map(a => a.description)
       : [];
 
+    const suite = test.parent.title || 'unspecified';
+    const projectName =
+    (test.parent as any)?.project?.().name || 'default';
+
+
     writeJsonLine({
       event: 'test_end',
+      suite,
       title: test.title,
       tags,
       status: result.status.toUpperCase(),
       duration: result.duration ?? 0,
-      project: test.parent.project()?.name || 'unknown',
+      project: projectName,
       error: result.error?.message || undefined
     });
   }

@@ -1,48 +1,38 @@
 import { test as base, expect } from '@playwright/test';
 
-const describeTagStack: string[][] = [];
+let suiteTags: string[] = [];
 
 function extractTags(str: string): string[] {
   return str.match(/@[a-zA-Z0-9_-]+/g) || [];
 }
 
-// ✅ Create a full wrapper on top of base test
 const test = base.extend<{}>({});
 
-// ✅ Fully override describe before it's used
 const originalDescribe = test.describe;
 
+// ✅ Override only for suite tag extraction
 test.describe = function (title: string, fn: () => void) {
-  const tags = extractTags(title);
-  describeTagStack.push(tags);
-
-  originalDescribe(title, () => {
-    try {
-      fn();
-    } finally {
-      describeTagStack.pop();
-    }
-  });
+  suiteTags = extractTags(title); // store once per file
+  originalDescribe(title, fn);
 } as typeof test.describe;
 
-// 🔁 Preserve other describe variants
+// 🔁 Preserve original describe variants
 test.describe.only = originalDescribe.only.bind(originalDescribe);
 test.describe.skip = originalDescribe.skip.bind(originalDescribe);
 test.describe.fixme = originalDescribe.fixme.bind(originalDescribe);
 test.describe.configure = originalDescribe.configure.bind(originalDescribe);
 
-// ✅ Inject tags via annotation before each test
+// ✅ Inject both suite-level and test-level tags before each test
 test.beforeEach(async ({}, testInfo) => {
   const titleTags = extractTags(testInfo.title);
-  const inheritedTags = describeTagStack.at(-1) || [];
-  const allTags = [...new Set([...titleTags, ...inheritedTags])];
+  const allTags = [...new Set([...suiteTags, ...titleTags])];
 
   for (const tag of allTags) {
     testInfo.annotations.push({ type: 'tag', description: tag });
   }
 });
 
-// 👣 Optional test.step wrapper
+// 👣 Optional wrapper for labeled steps
 async function step(description: string, action: () => Promise<void>) {
   await test.step(description, action);
 }

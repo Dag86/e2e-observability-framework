@@ -19,8 +19,8 @@ export class HomePage {
   }
 
   async completeTodo(todoText: string) {
-    const todoItem = this.page.locator(HomePageSelectors.todoToggle).filter({ hasText: todoText });
-    await todoItem.click();  
+    const todoItem = this.page.locator(HomePageSelectors.todoToggle)
+    await todoItem.check();  
 
   }
   

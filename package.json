@@ -10,8 +10,10 @@
     "test:smoke": "npx playwright test --grep @smoke",
     "test:regression": "npx playwright test --grep @regression",
 
-    "clean:reports": "rimraf test-results reports/json-reports reports/playwright-reports/*.html",
-    "clean:logs": "rimraf reports/logs/*.jsonl",
+    "clean:reports": "rimraf test-results reports/json-reports reports/playwright-reports/index.html"
+
+,
+    "clean:logs": "rimraf reports/logs/playwright.jsonl",
 
     "test:clean": "npm run clean:reports && npm run clean:logs && npm run test",
 
@@ -19,10 +21,7 @@
     "test:firefox": "npx playwright test --project=Firefox",
     "test:webkit": "npx playwright test --project=WebKit",
 
-    "start:metrics-server": "tsx src/config/metrics-server.ts",
-
-    "build:reporter": "tsx src/utils/log-reporter.ts > .playwright-log-reporter.js",
-    "test:reporter": "npm run build:reporter && npx playwright test"
+    "start:metrics-server": "tsx src/metrics/metrics-server.ts"
   },
   "keywords": [],
   "author": "",
