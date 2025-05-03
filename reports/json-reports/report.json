@@ -130,7 +130,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 604,
+                      "duration": 667,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -138,10 +138,10 @@
                       "steps": [
                         {
                           "title": "Send GET request to TodoMVC",
-                          "duration": 469
+                          "duration": 565
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:44.318Z",
+                      "startTime": "2025-05-03T02:22:29.287Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -197,10 +197,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 3,
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 436,
+                      "duration": 371,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -208,10 +208,10 @@
                       "steps": [
                         {
                           "title": "Send GET request to TodoMVC",
-                          "duration": 308
+                          "duration": 282
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:57.252Z",
+                      "startTime": "2025-05-03T02:22:42.395Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -277,7 +277,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 633,
+                      "duration": 665,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -285,10 +285,10 @@
                       "steps": [
                         {
                           "title": "Send GET request to invalid path",
-                          "duration": 492
+                          "duration": 554
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:44.314Z",
+                      "startTime": "2025-05-03T02:22:29.285Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -326,10 +326,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 2,
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 410,
+                      "duration": 355,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -337,10 +337,10 @@
                       "steps": [
                         {
                           "title": "Send GET request to invalid path",
-                          "duration": 314
+                          "duration": 274
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:57.259Z",
+                      "startTime": "2025-05-03T02:22:42.391Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -398,7 +398,7 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 7303,
+                      "duration": 6697,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -406,26 +406,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 3783
+                          "duration": 3624
                         },
                         {
                           "title": "Should create a new Todo item",
-                          "duration": 517
+                          "duration": 762
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 215
+                          "duration": 281
                         },
                         {
                           "title": "Should hover over and delete the completed Todo item",
-                          "duration": 392
+                          "duration": 656
                         },
                         {
                           "title": "Should verify the completed Todo item no longer exists",
-                          "duration": 55
+                          "duration": 49
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:44.371Z",
+                      "startTime": "2025-05-03T02:22:29.294Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -463,10 +463,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 0,
+                      "workerIndex": 8,
+                      "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 10780,
+                      "duration": 11260,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -474,26 +474,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 1180
+                          "duration": 2509
                         },
                         {
                           "title": "Should create a new Todo item",
-                          "duration": 1143
+                          "duration": 1118
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 1175
+                          "duration": 429
                         },
                         {
                           "title": "Should hover over and delete the completed Todo item",
-                          "duration": 3316
+                          "duration": 910
                         },
                         {
                           "title": "Should verify the completed Todo item no longer exists",
-                          "duration": 196
+                          "duration": 153
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:58.248Z",
+                      "startTime": "2025-05-03T02:22:42.404Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -551,7 +551,7 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 7224,
+                      "duration": 6977,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -559,26 +559,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 3748
+                          "duration": 3974
                         },
                         {
                           "title": "Should create a new Todo item",
-                          "duration": 623
+                          "duration": 683
                         },
                         {
                           "title": "Should verify the Todo item was created",
-                          "duration": 61
+                          "duration": 75
                         },
                         {
                           "title": "Should hover over and delete the Todo item",
-                          "duration": 632
+                          "duration": 884
                         },
                         {
                           "title": "Should verify the Todo item no longer exists",
-                          "duration": 129
+                          "duration": 36
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:44.334Z",
+                      "startTime": "2025-05-03T02:22:29.333Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -616,10 +616,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 8,
-                      "parallelIndex": 4,
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 14222,
+                      "duration": 11210,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -627,26 +627,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 3503
+                          "duration": 1547
                         },
                         {
                           "title": "Should create a new Todo item",
-                          "duration": 1331
+                          "duration": 1075
                         },
                         {
                           "title": "Should verify the Todo item was created",
-                          "duration": 503
+                          "duration": 139
                         },
                         {
                           "title": "Should hover over and delete the Todo item",
-                          "duration": 3023
+                          "duration": 4903
                         },
                         {
                           "title": "Should verify the Todo item no longer exists",
-                          "duration": 173
+                          "duration": 393
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:58.226Z",
+                      "startTime": "2025-05-03T02:22:42.500Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -704,7 +704,7 @@
                       "workerIndex": 4,
                       "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 6371,
+                      "duration": 6325,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -712,18 +712,18 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 3747
+                          "duration": 3557
                         },
                         {
                           "title": "Should attempt to submit an empty todo",
-                          "duration": 379
+                          "duration": 441
                         },
                         {
                           "title": "Should verify that no todo items were created",
-                          "duration": 102
+                          "duration": 68
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:44.318Z",
+                      "startTime": "2025-05-03T02:22:29.305Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -762,9 +762,9 @@
                   "results": [
                     {
                       "workerIndex": 10,
-                      "parallelIndex": 1,
+                      "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 10565,
+                      "duration": 8703,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -772,18 +772,18 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 2787
+                          "duration": 4005
                         },
                         {
                           "title": "Should attempt to submit an empty todo",
-                          "duration": 930
+                          "duration": 621
                         },
                         {
                           "title": "Should verify that no todo items were created",
-                          "duration": 248
+                          "duration": 77
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:58.321Z",
+                      "startTime": "2025-05-03T02:22:42.638Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -841,7 +841,7 @@
                       "workerIndex": 5,
                       "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 7168,
+                      "duration": 6511,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -849,26 +849,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 3741
+                          "duration": 3604
                         },
                         {
                           "title": "Should create a Todo item: \"Wash the car\"",
-                          "duration": 621
+                          "duration": 780
                         },
                         {
                           "title": "Should verify Todo was created",
-                          "duration": 64
+                          "duration": 55
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 309
+                          "duration": 229
                         },
                         {
                           "title": "Should verify Todo is marked as completed",
-                          "duration": 86
+                          "duration": 64
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:44.385Z",
+                      "startTime": "2025-05-03T02:22:29.334Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -901,10 +901,10 @@
                   "projectName": "Chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 6528,
+                      "duration": 6644,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -912,26 +912,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 3761
+                          "duration": 3524
                         },
                         {
                           "title": "Should create a Todo item: \"Buy groceries\"",
-                          "duration": 731
+                          "duration": 809
                         },
                         {
                           "title": "Should verify Todo was created",
-                          "duration": 81
+                          "duration": 48
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 418
+                          "duration": 359
                         },
                         {
                           "title": "Should verify Todo is marked as completed",
-                          "duration": 181
+                          "duration": 59
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:44.992Z",
+                      "startTime": "2025-05-03T02:22:30.002Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -960,10 +960,10 @@
                   "projectName": "Chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 7038,
+                      "duration": 6400,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -971,26 +971,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 3753
+                          "duration": 3594
                         },
                         {
                           "title": "Should create a Todo item: \"!@#$%^&*()_+\"",
-                          "duration": 739
+                          "duration": 778
                         },
                         {
                           "title": "Should verify Todo was created",
-                          "duration": 54
+                          "duration": 40
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 268
+                          "duration": 514
                         },
                         {
                           "title": "Should verify Todo is marked as completed",
-                          "duration": 83
+                          "duration": 125
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:45.002Z",
+                      "startTime": "2025-05-03T02:22:30.014Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1012,16 +1012,21 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [],
+                  "annotations": [
+                    {
+                      "type": "tag",
+                      "description": "@smoke"
+                    }
+                  ],
                   "expectedStatus": "passed",
                   "projectId": "Chromium",
                   "projectName": "Chromium",
                   "results": [
                     {
-                      "workerIndex": 4,
-                      "parallelIndex": 4,
+                      "workerIndex": 5,
+                      "parallelIndex": 5,
                       "status": "passed",
-                      "duration": 1782,
+                      "duration": 1741,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1029,27 +1034,32 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 550
+                          "duration": 660
                         },
                         {
                           "title": "Should create a Todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
-                          "duration": 324
+                          "duration": 392
                         },
                         {
                           "title": "Should verify Todo was created",
-                          "duration": 40
+                          "duration": 33
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 199
+                          "duration": 175
                         },
                         {
                           "title": "Should verify Todo is marked as completed",
-                          "duration": 49
+                          "duration": 37
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:52.883Z",
-                      "annotations": [],
+                      "startTime": "2025-05-03T02:22:37.491Z",
+                      "annotations": [
+                        {
+                          "type": "tag",
+                          "description": "@smoke"
+                        }
+                      ],
                       "attachments": []
                     }
                   ],
@@ -1082,9 +1092,9 @@
                   "results": [
                     {
                       "workerIndex": 11,
-                      "parallelIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 7476,
+                      "duration": 10492,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1092,26 +1102,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 1629
+                          "duration": 2943
                         },
                         {
                           "title": "Should create a Todo item: \"Wash the car\"",
-                          "duration": 991
+                          "duration": 2089
                         },
                         {
                           "title": "Should verify Todo was created",
-                          "duration": 290
+                          "duration": 152
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 1179
+                          "duration": 1475
                         },
                         {
                           "title": "Should verify Todo is marked as completed",
-                          "duration": 78
+                          "duration": 313
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:58.443Z",
+                      "startTime": "2025-05-03T02:22:42.857Z",
                       "annotations": [
                         {
                           "type": "tag",
@@ -1144,10 +1154,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 6,
-                      "parallelIndex": 2,
+                      "workerIndex": 7,
+                      "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 10473,
+                      "duration": 12344,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1155,26 +1165,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 2530
+                          "duration": 2444
                         },
                         {
                           "title": "Should create a Todo item: \"Buy groceries\"",
-                          "duration": 2469
+                          "duration": 2030
                         },
                         {
                           "title": "Should verify Todo was created",
-                          "duration": 661
+                          "duration": 81
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 903
+                          "duration": 669
                         },
                         {
                           "title": "Should verify Todo is marked as completed",
-                          "duration": 153
+                          "duration": 1521
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:57.735Z",
+                      "startTime": "2025-05-03T02:22:42.799Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1203,10 +1213,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 3,
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9256,
+                      "duration": 10907,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1214,26 +1224,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 2405
+                          "duration": 1277
                         },
                         {
                           "title": "Should create a Todo item: \"!@#$%^&*()_+\"",
-                          "duration": 1188
+                          "duration": 1129
                         },
                         {
                           "title": "Should verify Todo was created",
-                          "duration": 759
+                          "duration": 175
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 945
+                          "duration": 2024
                         },
                         {
                           "title": "Should verify Todo is marked as completed",
-                          "duration": 236
+                          "duration": 3416
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:57.766Z",
+                      "startTime": "2025-05-03T02:22:42.824Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1255,21 +1265,16 @@
               "tests": [
                 {
                   "timeout": 30000,
-                  "annotations": [
-                    {
-                      "type": "tag",
-                      "description": "@smoke"
-                    }
-                  ],
+                  "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "Firefox",
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 11,
-                      "parallelIndex": 5,
+                      "workerIndex": 10,
+                      "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 5265,
+                      "duration": 11046,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1277,32 +1282,27 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 1368
+                          "duration": 1693
                         },
                         {
                           "title": "Should create a Todo item: \"This is a very long todo item to test text wrapping behavior in the UI\"",
-                          "duration": 1071
+                          "duration": 879
                         },
                         {
                           "title": "Should verify Todo was created",
-                          "duration": 157
+                          "duration": 38
                         },
                         {
                           "title": "Should complete the Todo item",
-                          "duration": 944
+                          "duration": 1322
                         },
                         {
                           "title": "Should verify Todo is marked as completed",
-                          "duration": 154
+                          "duration": 350
                         }
                       ],
-                      "startTime": "2025-05-02T22:16:07.580Z",
-                      "annotations": [
-                        {
-                          "type": "tag",
-                          "description": "@smoke"
-                        }
-                      ],
+                      "startTime": "2025-05-03T02:22:54.442Z",
+                      "annotations": [],
                       "attachments": []
                     }
                   ],
@@ -1346,10 +1346,10 @@
                   "projectName": "Chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 2211,
+                      "duration": 2204,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1357,26 +1357,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 567
+                          "duration": 575
                         },
                         {
                           "title": "Should add multiple todos",
-                          "duration": 619
+                          "duration": 633
                         },
                         {
                           "title": "Should mark second todo as completed",
-                          "duration": 210
+                          "duration": 165
                         },
                         {
                           "title": "Should filter Active todos and verify result",
-                          "duration": 267
+                          "duration": 254
                         },
                         {
                           "title": "Should filter Completed todos and verify result",
-                          "duration": 202
+                          "duration": 204
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:53.100Z",
+                      "startTime": "2025-05-03T02:22:37.658Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1404,10 +1404,10 @@
                   "projectName": "Chromium",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 1782,
+                      "duration": 1692,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1415,22 +1415,22 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 552
+                          "duration": 627
                         },
                         {
                           "title": "Should add a persistent todo",
-                          "duration": 379
+                          "duration": 330
                         },
                         {
                           "title": "Should reload the page",
-                          "duration": 285
+                          "duration": 271
                         },
                         {
                           "title": "Should verify the todo persists after reload",
-                          "duration": 52
+                          "duration": 53
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:53.101Z",
+                      "startTime": "2025-05-03T02:22:37.952Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1458,10 +1458,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 9,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4387,
+                      "duration": 9271,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1469,26 +1469,26 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 1086
+                          "duration": 1436
                         },
                         {
                           "title": "Should add multiple todos",
-                          "duration": 782
+                          "duration": 1081
                         },
                         {
                           "title": "Should mark second todo as completed",
-                          "duration": 260
+                          "duration": 319
                         },
                         {
                           "title": "Should filter Active todos and verify result",
-                          "duration": 426
+                          "duration": 407
                         },
                         {
                           "title": "Should filter Completed todos and verify result",
-                          "duration": 344
+                          "duration": 359
                         }
                       ],
-                      "startTime": "2025-05-02T22:16:10.871Z",
+                      "startTime": "2025-05-03T02:22:55.037Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1516,10 +1516,10 @@
                   "projectName": "Firefox",
                   "results": [
                     {
-                      "workerIndex": 7,
-                      "parallelIndex": 3,
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 4446,
+                      "duration": 8454,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1527,22 +1527,22 @@
                       "steps": [
                         {
                           "title": "Should navigate to the Todo App",
-                          "duration": 1035
+                          "duration": 1424
                         },
                         {
                           "title": "Should add a persistent todo",
-                          "duration": 680
+                          "duration": 723
                         },
                         {
                           "title": "Should reload the page",
-                          "duration": 1367
+                          "duration": 1306
                         },
                         {
                           "title": "Should verify the todo persists after reload",
-                          "duration": 270
+                          "duration": 165
                         }
                       ],
-                      "startTime": "2025-05-02T22:16:12.932Z",
+                      "startTime": "2025-05-03T02:22:55.911Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1587,10 +1587,10 @@
                   "projectName": "Chromium",
                   "results": [
                     {
-                      "workerIndex": 5,
-                      "parallelIndex": 5,
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 2376,
+                      "duration": 2280,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1598,30 +1598,30 @@
                       "steps": [
                         {
                           "title": "Should navigate to Home Page",
-                          "duration": 566
+                          "duration": 625
                         },
                         {
                           "title": "Should add two todos",
-                          "duration": 581
+                          "duration": 525
                         },
                         {
                           "title": "Should mark the second todo as completed",
-                          "duration": 234
+                          "duration": 163
                         },
                         {
                           "title": "Should test Active Filter and verify only Active task is visible",
-                          "duration": 269
+                          "duration": 215
                         },
                         {
                           "title": "Should test Completed Filter and verify only Completed task is visible",
-                          "duration": 168
+                          "duration": 153
                         },
                         {
                           "title": "Should test All Filter and verify both tasks are visible",
-                          "duration": 193
+                          "duration": 165
                         }
                       ],
-                      "startTime": "2025-05-02T22:15:53.130Z",
+                      "startTime": "2025-05-03T02:22:37.982Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1650,9 +1650,9 @@
                   "results": [
                     {
                       "workerIndex": 11,
-                      "parallelIndex": 5,
+                      "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 4925,
+                      "duration": 6950,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -1660,30 +1660,30 @@
                       "steps": [
                         {
                           "title": "Should navigate to Home Page",
-                          "duration": 1300
+                          "duration": 1263
                         },
                         {
                           "title": "Should add two todos",
-                          "duration": 775
+                          "duration": 991
                         },
                         {
                           "title": "Should mark the second todo as completed",
-                          "duration": 237
+                          "duration": 233
                         },
                         {
                           "title": "Should test Active Filter and verify only Active task is visible",
-                          "duration": 324
+                          "duration": 458
                         },
                         {
                           "title": "Should test Completed Filter and verify only Completed task is visible",
-                          "duration": 315
+                          "duration": 279
                         },
                         {
                           "title": "Should test All Filter and verify both tasks are visible",
-                          "duration": 294
+                          "duration": 288
                         }
                       ],
-                      "startTime": "2025-05-02T22:16:14.877Z",
+                      "startTime": "2025-05-03T02:22:57.425Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1703,8 +1703,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-05-02T22:15:41.453Z",
-    "duration": 40295.462999999996,
+    "startTime": "2025-05-03T02:22:27.009Z",
+    "duration": 40439.457,
     "expected": 24,
     "skipped": 0,
     "unexpected": 0,
